@@ -1,0 +1,48 @@
+name: Validate bounded AnyTLS stage admission candidate
+
+on:
+  push:
+    branches: [pcs/stage-admission-20261018]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pcs-stage-admission
+  cancel-in-progress: false
+
+jobs:
+  validate-build:
+    if: github.repository == 'justinchen13/mihomo' && github.ref == 'refs/heads/pcs/stage-admission-20261018'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: src/mihomo
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: justinchen13/mihomo
+          ref: 68b13ec2ba57bbb8aafaedae98255636b4fc1bf5
+          path: src/mihomo-base
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.25.6'
+          architecture: x64
+          check-latest: false
+          cache: false
+      - name: Verify bounded admission and build tagged experimental binary
+        run: python3 src/mihomo/tools/pcs-stage-admission/build.py
+      - name: Preserve every outcome and experimental binary
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: stage-admission-${{ github.sha }}-${{ github.run_attempt }}
+          path: dist/stage-admission/
+          retention-days: 7
+          if-no-files-found: error
+          compression-level: 0
+          include-hidden-files: false
