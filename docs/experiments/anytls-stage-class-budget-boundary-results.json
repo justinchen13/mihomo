@@ -1,0 +1,124 @@
+{
+  "status": "BOUNDARY_AND_TAGGED_BUILD_PASS_COST_AND_RELEASE_PENDING",
+  "generated_utc": "2026-10-18T09:42:22.901903+00:00",
+  "pure_mock": {
+    "status": "PASS",
+    "tests": 11,
+    "started_utc": "2026-10-18T09:37:15.567013+00:00",
+    "ended_utc": "2026-10-18T09:37:15.834566+00:00"
+  },
+  "boundary": {
+    "status": "PASS",
+    "started_utc": "2026-10-18T09:37:15.920985+00:00",
+    "ended_utc": "2026-10-18T09:37:43.698047+00:00",
+    "cases": [
+      {
+        "case": "observed64_small_counters",
+        "legacy": 53483,
+        "candidate": 53999,
+        "published_inner": 53999,
+        "response": 54169,
+        "old_fits": true,
+        "candidate_fits": true,
+        "payload_limited": false,
+        "omitted_sessions": 0,
+        "omitted_slow": 0
+      },
+      {
+        "case": "observed64_uint64_width",
+        "legacy": 53483,
+        "candidate": 54455,
+        "published_inner": 54455,
+        "response": 54625,
+        "old_fits": true,
+        "candidate_fits": true,
+        "payload_limited": false,
+        "omitted_sessions": 0,
+        "omitted_slow": 0
+      },
+      {
+        "case": "observed64_plus32events_small_counters",
+        "legacy": 60460,
+        "candidate": 60976,
+        "published_inner": 60976,
+        "response": 61146,
+        "old_fits": true,
+        "candidate_fits": true,
+        "payload_limited": false,
+        "omitted_sessions": 0,
+        "omitted_slow": 0
+      },
+      {
+        "case": "observed64_plus32events_uint64_width",
+        "legacy": 60460,
+        "candidate": 61432,
+        "published_inner": 61432,
+        "response": 61602,
+        "old_fits": true,
+        "candidate_fits": true,
+        "payload_limited": false,
+        "omitted_sessions": 0,
+        "omitted_slow": 0
+      }
+    ],
+    "inner_limit_bytes": 64512,
+    "response_limit_bytes": 65536,
+    "scope": "Observed actual-TLS laboratory32live+32terminal snapshots; declared synthetic32completion/uint64-width combinations. Not a maximum over all possible runtime snapshots. Consumer-after-sanitizing64KiB limit remains separate qualification."
+  },
+  "build": {
+    "status": "PASS",
+    "started_utc": "2026-10-18T09:37:43.699924+00:00",
+    "ended_utc": "2026-10-18T09:40:10.280117+00:00",
+    "source_commit": "68b13ec2ba57bbb8aafaedae98255636b4fc1bf5",
+    "runtime_tree": "c03aacbd454e9f6cf59c164ca3a5964551a87620",
+    "binary_sha256": "c8ebac8657434055a64bd3066c8348c86b7171963c6a5f0f583969a2df0524fd",
+    "binary_bytes": 33816724,
+    "release_version": "v1.19.17-pcsproxy3",
+    "build_time_utc": "2026-10-18T09:28:09Z",
+    "minimum_free_bytes": 1862557696,
+    "resource_readback": {
+      "NanoCpus": 350000000,
+      "Memory": 536870912,
+      "MemorySwap": 536870912,
+      "PidsLimit": 128,
+      "NetworkMode": "none"
+    },
+    "owned_cleanup": true,
+    "cleanup_status": "OWNED_REMOVED_AND_ABSENCE_CONFIRMED",
+    "oom_killed": false
+  },
+  "resources": {
+    "cpu_fraction": 0.35,
+    "memory_bytes": 536870912,
+    "memory_plus_swap_bytes": 536870912,
+    "GOMEMLIMIT": "320MiB",
+    "toolchain": "go1.25.6",
+    "tags": "with_gvisor",
+    "CGO_ENABLED": 0,
+    "GOAMD64": "v1",
+    "network": "none",
+    "source_modules_readonly": true,
+    "anonymous_volumes_created": 0,
+    "both_phase_owned_cleanup": true,
+    "minimum_free_bytes": 1862557696
+  },
+  "lock": {
+    "ended_utc": "2026-10-18T09:40:10.505984+00:00",
+    "runner_exit_code": 0,
+    "lock_free_after_runner": true
+  },
+  "artifact_sha256": {
+    "boundary-build-execution-v2.json": "76e97cdca13d5458ea9bccc74132ba4a2cb65d60b31d489da5c9d7677de50dc6",
+    "pure-v2-results/result.json": "48c6a16ba4a7898b76f9d43953969e9448f6093c83fbbb6848b65ce9f33f8c05",
+    "boundary-build-v2-results/boundary/result.json": "55e8d6de6493578b7094c01b41093a6f92a344f681fa810e92dfd317c7148f54",
+    "boundary-build-v2-results/build/result.json": "9db95c1f03d9c9793c4e5ef473b320a3c5eb4e4ee349f7930f31674e3d9a0de9",
+    "boundary-build-v2-completion.json": "f02d8712f518ab31cc3d7244e10cee51a60ff56ce01dc42402077e30e16216dd"
+  },
+  "production_changes": false,
+  "cost_matrix_executed": false,
+  "image_assembly_or_deployment": false,
+  "prior_failed_experiments_preserved": true,
+  "tested_test_sha256": "1fec4ead04776fdff13625d0473cd260250060d0925dc11420e8a82cf5c12288",
+  "formatted_test_sha256": "47ae5fd9bba7c024c00fceb026ca6ceb7af5452307c092ee62f68c7ce584dc71",
+  "test_difference": "Only the three alignment changes emitted by the accepted Go1.25.6 gofmt -d; original tested overlay and manifests preserved privately. Runtime source files unchanged."
+}
