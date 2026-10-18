@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "source_commit": "5f89b59bf00fda9f63f0ddf9ecabf5552d2a2a03",
+  "date": "2026-10-18",
+  "status": "FUNCTIONAL_QUALIFICATION_PASSED_RELEASE_COST_PENDING",
+  "compiled_cli_sha256": "7620d44d667bb47530d07f6f3754a3617f8de5dda2544b73e24369e9dc5fc448",
+  "go": "go1.25.6",
+  "tags": [
+    "with_gvisor"
+  ],
+  "original_resource_gates_unchanged": true,
+  "qualification": [
+    {
+      "mode": "off-preflight",
+      "outer_sessions": 1,
+      "status": "PASS",
+      "proxy_cpu_seconds": 1.1800000000000002,
+      "collector_cpu_seconds_including_children": 0.192979,
+      "collector_throttled_wall_ratio": 0.04183407744218054,
+      "parent_throttled_wall_ratio": 0.0,
+      "proxy_throttled_wall_ratio": 0.0,
+      "all_nonresource_gates_pass": true,
+      "full_cycle_max_seconds": 0.6062625292688608,
+      "regular_rows": 3,
+      "tcp_rows_truncated": 0,
+      "ready_publications": 0,
+      "tracked_sessions": 0,
+      "untracked_sessions": null,
+      "exact_cookie_joins": null
+    },
+    {
+      "mode": "off-preflight",
+      "outer_sessions": 66,
+      "status": "RESOURCE_INCONCLUSIVE",
+      "proxy_cpu_seconds": 1.22,
+      "collector_cpu_seconds_including_children": 0.571444,
+      "collector_throttled_wall_ratio": 0.1280176277218574,
+      "parent_throttled_wall_ratio": 0.0,
+      "proxy_throttled_wall_ratio": 0.0,
+      "all_nonresource_gates_pass": true,
+      "full_cycle_max_seconds": 1.9091071654111147,
+      "regular_rows": 3,
+      "tcp_rows_truncated": 16,
+      "ready_publications": 0,
+      "tracked_sessions": 0,
+      "untracked_sessions": null,
+      "exact_cookie_joins": null
+    },
+    {
+      "mode": "on-qualification",
+      "outer_sessions": 1,
+      "status": "PASS",
+      "proxy_cpu_seconds": 1.21,
+      "collector_cpu_seconds_including_children": 0.20986,
+      "collector_throttled_wall_ratio": 0.04580608628731493,
+      "parent_throttled_wall_ratio": 0.0,
+      "proxy_throttled_wall_ratio": 0.0,
+      "all_nonresource_gates_pass": true,
+      "full_cycle_max_seconds": 0.7127911001443863,
+      "regular_rows": 3,
+      "tcp_rows_truncated": 0,
+      "ready_publications": 3,
+      "tracked_sessions": 1,
+      "untracked_sessions": 0,
+      "exact_cookie_joins": 1
+    },
+    {
+      "mode": "on-qualification",
+      "outer_sessions": 66,
+      "status": "RESOURCE_INCONCLUSIVE",
+      "proxy_cpu_seconds": 1.34,
+      "collector_cpu_seconds_including_children": 0.689231,
+      "collector_throttled_wall_ratio": 0.15354303117389217,
+      "parent_throttled_wall_ratio": 0.0,
+      "proxy_throttled_wall_ratio": 0.0,
+      "all_nonresource_gates_pass": true,
+      "full_cycle_max_seconds": 2.403175076469779,
+      "regular_rows": 3,
+      "tcp_rows_truncated": 16,
+      "ready_publications": 3,
+      "tracked_sessions": 32,
+      "untracked_sessions": 34,
+      "exact_cookie_joins": 29
+    }
+  ],
+  "security": {
+    "default_off_and_enabled": "PASS",
+    "TLS": [
+      "1.2",
+      "1.3"
+    ],
+    "verified_trust_and_hostname": true,
+    "auth_and_bad_padding_negative_controls": true,
+    "tcp_and_tls_management_stage_route": 404,
+    "unix_post": 405,
+    "unix_directory_mode": "0700",
+    "unix_socket_mode": "0600 applied existing policy; initial creation mode separately retained",
+    "real_unprivileged_uid_denied": true,
+    "incomplete_read_body_positive_control": "observed then exact4096B recovery",
+    "same_authenticated_session_after_consumer_failures": [
+      "missing Unix path",
+      "unsafe stage output symlink",
+      "unsafe cursor symlink"
+    ],
+    "failure_controls_scope": "Unchanged stage helper + live CLI, not a whole main collector fault-injection test."
+  },
+  "retained_failures": [
+    {
+      "attempt": "v1 off66",
+      "result": "fixture warmup80KiB API truncation before GO; retained, never treated as proxy failure; v2 reuses original monitor4MiB helper with strict framing checks"
+    },
+    {
+      "attempt": "v2 off66",
+      "result": "RESOURCE_INCONCLUSIVE; observer12.8018percent throttled wall exceeded original10percent gate"
+    },
+    {
+      "attempt": "v2 on66",
+      "result": "RESOURCE_INCONCLUSIVE; observer15.3543percent throttled wall exceeded original10percent gate"
+    }
+  ],
+  "slow_example_coverage": {
+    "scope": "same32 stable tracked sessions, sequence2->4;34 untracked unknown",
+    "read_header_slow_count_delta": 168,
+    "retained_read_header_examples": 64,
+    "lost_slow_event_delta": 104,
+    "other_five_stage_slow_count_deltas": 0,
+    "all_six_metric_arrays_present_and_monotonic": true,
+    "write_count_per_stage": 695,
+    "writer_slow_incident_proven_missing": false,
+    "interpretation": "Normal phased request idle occupies the shared32-example queue. Per-stage retained-session counters remain available; examples are incomplete and never represent business failure counts."
+  },
+  "resource_interpretation": "The entire fixture and proxy were unthrottled. Collector10percent quota imposed burst waits; its CPU was low on whole-window average. Both TCP ends share one lab namespace, yielding528 socket rows at66; regular512cap omits16. This topology limitation does not waive the original failed gate.",
+  "pending": [
+    "Fresh direct production61f2 binary with readerOFF versus candidate5f89 with stage/readerON,1/32/66 ABBA under separately declared bounded-observer acceptance",
+    "Parent release review and postdeploy natural observation"
+  ],
+  "limitations": [
+    "No production deployment",
+    "No public Internet or maximum-throughput result",
+    "No speed benefit claim",
+    "Only32of66 stage sessions covered",
+    "Legacy default-off +25.42percent HOLD and later limited nil-fastpath +2.57percent result remain separate prior evidence; neither is full runtime qualification"
+  ]
+}
