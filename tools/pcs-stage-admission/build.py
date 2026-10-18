@@ -17,8 +17,8 @@ import time
 
 BASE = '68b13ec2ba57bbb8aafaedae98255636b4fc1bf5'
 SOURCE = '00e79a0a478d6cc340ca039bd4f6a021dc3f03de'
-VERSION = 'v1.19.17-pcsproxy-s2-ci'
-BUILD_TIME = '2026-10-18T11:34:43Z'
+VERSION = 'v1.19.17-pcsproxy4'
+BUILD_TIME = '2026-10-18T11:50:53Z'
 ROOT = Path(os.environ['GITHUB_WORKSPACE']).resolve()
 CANDIDATE, BASELINE = ROOT/'src/mihomo', ROOT/'src/mihomo-base'
 OUT = ROOT/'dist/stage-admission'
@@ -49,7 +49,7 @@ LOCKS = {'go.mod':'23e40f9e1197e44b1709063e5c44c3f8ef7ef38c534aaf8b8094e391d4740
          'go.sum':'847577650191553e901df6cd82cfec82d3411351cf3e5d5721720f4519fee374'}
 ENV = dict(os.environ, GOTOOLCHAIN='local', GOMAXPROCS='2', GOMEMLIMIT='2GiB',
            GOFLAGS='-mod=readonly', GOOS='linux', GOARCH='amd64', GOAMD64='v1')
-RECORD = {'status':'FAIL', 'scope':'pure observation-registry validation and tagged experimental binary only',
+RECORD = {'status':'FAIL', 'scope':'pure observation-registry validation and tagged diagnostic release candidate; no deployment',
           'runtime_source':SOURCE, 'baseline_source':BASE, 'version':VERSION, 'build_time':BUILD_TIME,
           'network_workload':False, 'deployment':False, 'phases':[], 'tests':{}}
 
@@ -187,7 +187,7 @@ def main():
   for path in (CANDIDATE,BASELINE):
    for name,want in LOCKS.items():
     if sha(path/name)!=want:raise RuntimeError('final dependency lock drift')
-  RECORD['status']='PASS_SCOPED_FUNCTIONAL_BUILD_ONLY';RECORD['release_status']='HOLD_PENDING_REVIEW_AND_WHOLE_COST'
+  RECORD['status']='PASS_SCOPED_FUNCTIONAL_BUILD_ONLY';RECORD['release_status']='HOLD_PENDING_ARTIFACT_IMAGE_CONSUMER_AND_ROLLOUT_REVIEW'
  except Exception as exc:
   RECORD['failure']=type(exc).__name__+': '+str(exc);raise
  finally:
