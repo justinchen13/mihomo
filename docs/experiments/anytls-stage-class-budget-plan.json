@@ -1,0 +1,41 @@
+{
+  "status": "TARGET_TESTS_PASS_NOT_DEPLOYABLE_PENDING_RUNTIME_COST",
+  "scope": "S1 fixed total32 slow-event budget and class accounting only; session capacity32 unchanged, no protocol or network changes",
+  "baseline": "5f89b59bf00fda9f63f0ddf9ecabf5552d2a2a03",
+  "source_branch": "pcs/stage-class-budget-20261018",
+  "schema": "Outer Unix envelope1 unchanged; inner batch2 adds fixed_stage_budgets_v1, six fixed counters and six payload omission counts. Old strict consumer rejects2; install validated backward-compatible consumer before producer. Rollback producer1 accepted, new class values null.",
+  "class_capacities": [
+    8,
+    4,
+    8,
+    2,
+    6,
+    4
+  ],
+  "limits": "All classes sum32; header<=2 still observable, not automatically harmless. No blocking enqueue, no new shared writer lock, no sharedlogger IO, body64KiB unchanged.",
+  "counters": "Perclass attempted/admitted/dropped/dequeued cumulative since epoch. Existing lost_slow remains every queue-full drop. Dequeued is not delivered/exported. lost_batch/completion/terminal meanings unchanged. Concurrent atomic loads are explicitly non-atomic; conservation only after quiescence.",
+  "trimming": "Exporter original all-detail fallback remains; omitted_slow_events_by_class counts payload omissions separately from queue full drops. Consumer validates fixed lists/numeric types/enums and omission sum.",
+  "ordering": "At most32 events sorted within batch by captured completion time. Monotonic time is private; existing UTC times retained. Publication sequence unchanged, no cross-publication total event-order guarantee.",
+  "prepared_tests": [
+    "TestStageSlowHeaderFloodCannotConsumeOtherClasses (baseline-compatible negative fixture)",
+    "TestStageSlowHeaderFloodPreservesRealTLSStages (real TLS1.2/1.3 padding DATA/FIN, exact payload; baseline-compatible negative fixture)",
+    "TestStageSlowClassesBoundedAndQuiescentAccounting (six-class concurrent producers, fixedcap, loss accounting, ordering/no replay)",
+    "TestStageSlowClassesPayloadOmissionsSeparateFromQueueDrops",
+    "test_anytls_stage_classes.py (schema1 unknown/schema2 preserved/invalid types/no secret echo/non-atomic counters/omissions)"
+  ],
+  "existing_test_change": "Original single pipe queue saturation case now saturates fixed pipe class4+5 and still demands exactly5drops; blocked exporter assertion unchanged. New aggregate conservation test checks32total.",
+  "remaining_gates": [
+    "full official tagged binary and actualTLS/security/Unix-only route smoke",
+    "fresh direct-production-to-enabled wholecollector 1/32/66 ABBA with same cost gates; prior12roundPASS cannot be inherited",
+    "post-release 5/15/30 natural observation plus per-class loss coverage"
+  ],
+  "consumer_patch": "docs/experiments/anytls_stage_schema_v2_consumer.patch; prepared against exact installed-source stage.py, no PCS/production file edited",
+  "S2": "Separate static bounded registry/pagination design only; not implemented here",
+  "S3": "New short-lived connections can be born and complete between10s TCP snapshots. Future bounded event-triggered socket Read/Write/TCP_INFO evidence needs original socket identity, nonblocking/bounded sampling cost and explicit uncovered events. Do not infer event-time transport behavior from first post-event sample or globally shorten cadence without a cost gate.",
+  "completed_target_validation": {
+    "baseline": "Exact5f89 pureheader negative compiled+RUN,header32/body0/pipe0 expectedFAIL",
+    "candidate": "Four newtarget normal/race PASS;TLS1.2/1.3 bothPASS",
+    "consumer": "10puretests actualprivate patchedstage.py PASS",
+    "safe_summary_sha256": "691638bc033b08ad487d79b17bd6991883bff9053670230cb3a71057fb2771fd"
+  }
+}

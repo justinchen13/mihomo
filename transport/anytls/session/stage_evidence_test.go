@@ -198,13 +198,13 @@ func TestStageEvidenceCapacityRotationAndUnknown(t *testing.T) {
 func TestStageEvidenceSlowRingAndBlockedSinkAreBounded(t *testing.T) {
 	h := testStageHub(t)
 	e := h.attach(nil)
-	for i := 0; i < evidenceSlowEvents+5; i++ {
+	for i := 0; i < evidenceSlowClassCapacity[stagePipeWrite]+5; i++ {
 		op := e.beginRead(stagePipeWrite, cmdPSH, 4)
 		op.started = time.Now().Add(-200 * time.Millisecond)
 		e.finishRead(op, nil)
 	}
 	b := h.collect(time.Now())
-	if len(b.SlowEvents) != evidenceSlowEvents || b.LostSlow != 5 {
+	if len(b.SlowEvents) != evidenceSlowClassCapacity[stagePipeWrite] || b.LostSlow != 5 {
 		t.Fatal("slow ring overflow accounting")
 	}
 	// A stalled external logger is never called by a proxy operation.

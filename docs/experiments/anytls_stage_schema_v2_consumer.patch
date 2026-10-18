@@ -1,0 +1,44 @@
+--- a/mihomo-anytls/monitor/stage.py
++++ b/mihomo-anytls/monitor/stage.py
+@@ -76,15 +76,39 @@
+ 
+ 
+ def sanitize_batch(b, epoch, sequence, key, scope):
++    if not isinstance(b, dict) or type(b.get('schema')) is not int or b['schema'] not in (1, 2):
++        raise ValueError('unsupported batch schema')
++    extra = {'slow_event_policy', 'slow_queue_counters', 'omitted_slow_events_by_class'} if b['schema'] == 2 else set()
+     keys(b, {'schema', 'kind', 'evidence_epoch', 'sequence', 'capture_started', 'capture_ended', 'time',
+              'export_age_ms', 'payload_limited', 'metric_stage_names', 'admission_policy', 'sessions',
+-             'slow_events', *COUNTS})
+-    if type(b['schema']) is not int or b['schema'] != 1 or b['kind'] != 'diagnostic_not_failure' or b['evidence_epoch'] != epoch or b['sequence'] != sequence:
++             'slow_events', *COUNTS, *extra})
++    if b['kind'] != 'diagnostic_not_failure' or b['evidence_epoch'] != epoch or b['sequence'] != sequence:
+         raise ValueError('batch identity mismatch')
+     number(b['sequence'], True)
+     if b['metric_stage_names'] != STAGES or b['admission_policy'] != 'bounded_rotation_on_auth_not_population_sample':
+         raise ValueError('unsupported policy')
+     out = {name: number(b[name], True) for name in COUNTS}
++    out.update(slow_event_policy=None, slow_queue_counters=None, omitted_slow_events_by_class=None)
++    if b['schema'] == 2:
++        if b['slow_event_policy'] != 'fixed_stage_budgets_v1':
++            raise ValueError('unsupported slow event policy')
++        classes, omitted = b['slow_queue_counters'], b['omitted_slow_events_by_class']
++        if not isinstance(classes, list) or len(classes) != len(STAGES) or not isinstance(omitted, list) or len(omitted) != len(STAGES):
++            raise ValueError('slow class budget')
++        out['slow_event_policy'] = b['slow_event_policy']
++        out['slow_queue_counters'] = []
++        for item, capacity in zip(classes, (8, 4, 8, 2, 6, 4)):
++            keys(item, {'capacity', 'attempted', 'admitted', 'dropped', 'dequeued'})
++            clean = {name: number(value, True) for name, value in item.items()}
++            if clean['capacity'] != capacity:
++                raise ValueError('unexpected slow class capacity')
++            # Producer counters are non-atomic snapshots, not instantaneous
++            # conservation equations. Never reject a valid concurrent capture
++            # merely because admitted/dequeued loads straddle an enqueue.
++            out['slow_queue_counters'].append(clean)
++        out['omitted_slow_events_by_class'] = [number(value, True) for value in omitted]
++        if sum(out['omitted_slow_events_by_class']) != out['omitted_slow_events']:
++            raise ValueError('payload omission accounting')
+     if out['tracked_live_sessions'] > 32 or out['live_authenticated_sessions'] != out['tracked_live_sessions'] + out['untracked_live_sessions']:
+         raise ValueError('inconsistent population counts')
+     out.update({name: stamp(b[name]) for name in ('capture_started', 'capture_ended', 'time')})

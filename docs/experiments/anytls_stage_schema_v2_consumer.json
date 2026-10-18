@@ -1,0 +1,9 @@
+{
+  "status": "PRIVATE_COPY_10_TESTS_PASS_NOT_INSTALLED",
+  "baseline_production_consumer_sha256": "2abd786c034445db26a0ad2d57c36d646b7eb7d32a361b19c10e14f2b75f953d",
+  "candidate_consumer_sha256": "e9059f80a07d1ee5c9fec828b8292d461398f376bfd187bb5e2b7bcc2a9dae31",
+  "patch_sha256": "166859a72aeb63421a81b0433037b9fa39c6010a1de626edd882322e14a6486f",
+  "rollout": "Validate and install backward-compatible consumer before schema2 producer; rollback producer to schema1 remains accepted. Old strict consumer rejects schema2; do not deploy source alone.",
+  "fields": "Preserve fixed per-class counters; schema1 class values null, not zero. No IP/user/target/cookie values added.",
+  "source_unchanged_in_PCS": true
+}

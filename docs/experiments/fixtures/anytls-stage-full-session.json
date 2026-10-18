@@ -1,0 +1,3905 @@
+{
+  "schema": 1,
+  "kind": "diagnostic_not_failure",
+  "evidence_epoch": "0000000000000000",
+  "sequence": 1,
+  "capture_started": "2026-10-18T08:23:18.370797634Z",
+  "capture_ended": "2026-10-18T08:23:18.371034629Z",
+  "time": "2026-10-18T08:23:18.371034629Z",
+  "export_age_ms": 0.005652,
+  "payload_limited": false,
+  "omitted_sessions": 0,
+  "omitted_slow_events": 0,
+  "metric_stage_names": [
+    "writer_wait",
+    "writer_owned",
+    "tls_write",
+    "read_header",
+    "read_body",
+    "pipe_write"
+  ],
+  "admission_policy": "bounded_rotation_on_auth_not_population_sample",
+  "live_authenticated_sessions": 66,
+  "tracked_live_sessions": 32,
+  "untracked_live_sessions": 34,
+  "evicted_sessions_total": 34,
+  "lost_completion_total": 0,
+  "lost_batch_total": 0,
+  "lost_slow_event_total": 0,
+  "lost_terminal_record_total": 2,
+  "sessions": [
+    {
+      "session": "0000000000000000-1",
+      "socket_cookie": "00001",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.158724356Z",
+      "session_age_ms": 1788.539017,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002275,
+          "max_ms": 0.000385,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.259191,
+          "max_ms": 0.0493,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.23608400000000002,
+          "max_ms": 0.045948,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.154372,
+          "max_ms": 1.040618,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0054789999999999995,
+          "max_ms": 0.001037,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.771806,
+          "max_ms": 0.29284,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-2",
+      "socket_cookie": "00002",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.189166456Z",
+      "session_age_ms": 1796.303382,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002192,
+          "max_ms": 0.000404,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.31110000000000004,
+          "max_ms": 0.08304,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.285895,
+          "max_ms": 0.078511,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.571158,
+          "max_ms": 0.635146,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005615,
+          "max_ms": 0.000892,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.5324840000000001,
+          "max_ms": 0.18926,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-3",
+      "socket_cookie": "00003",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.263671435Z",
+      "session_age_ms": 1825.643463,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0021310000000000005,
+          "max_ms": 0.000344,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.41432899999999995,
+          "max_ms": 0.136178,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.371431,
+          "max_ms": 0.133268,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.0239710000000004,
+          "max_ms": 0.724078,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006071,
+          "max_ms": 0.001091,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.600012,
+          "max_ms": 0.174673,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-4",
+      "socket_cookie": "00004",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.285831739Z",
+      "session_age_ms": 1826.052202,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002527,
+          "max_ms": 0.000515,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.31155299999999997,
+          "max_ms": 0.084547,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.28502600000000006,
+          "max_ms": 0.081462,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.975576,
+          "max_ms": 0.997612,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0048259999999999996,
+          "max_ms": 0.001185,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.621277,
+          "max_ms": 0.155849,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-5",
+      "socket_cookie": "00005",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.361045891Z",
+      "session_age_ms": 1819.704395,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0031219999999999998,
+          "max_ms": 0.000626,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.486356,
+          "max_ms": 0.099426,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.454796,
+          "max_ms": 0.095063,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.763799,
+          "max_ms": 0.956578,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0054080000000000005,
+          "max_ms": 0.00106,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.5648299999999999,
+          "max_ms": 0.189457,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-6",
+      "socket_cookie": "00006",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.427417252Z",
+      "session_age_ms": 1798.444381,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.00232,
+          "max_ms": 0.000371,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.340607,
+          "max_ms": 0.088617,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.313542,
+          "max_ms": 0.084934,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.2119519999999997,
+          "max_ms": 0.963934,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0053950000000000005,
+          "max_ms": 0.000925,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.612178,
+          "max_ms": 0.17886,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-7",
+      "socket_cookie": "00007",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.460067614Z",
+      "session_age_ms": 1813.104921,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0023420000000000003,
+          "max_ms": 0.000392,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.27121,
+          "max_ms": 0.06351,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.248403,
+          "max_ms": 0.060742,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.493188,
+          "max_ms": 0.616111,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.02434,
+          "max_ms": 0.019473,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.517646,
+          "max_ms": 0.11597,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-8",
+      "socket_cookie": "00008",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.5328896Z",
+      "session_age_ms": 1858.101581,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002646,
+          "max_ms": 0.000464,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.41773699999999997,
+          "max_ms": 0.080971,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.385794,
+          "max_ms": 0.077566,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 52.508399999999995,
+          "max_ms": 46.929674,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.007916,
+          "max_ms": 0.002381,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.723551,
+          "max_ms": 0.204189,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-9",
+      "socket_cookie": "00009",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.555103992Z",
+      "session_age_ms": 1803.721487,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002684,
+          "max_ms": 0.000412,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.39601000000000003,
+          "max_ms": 0.074664,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.35754,
+          "max_ms": 0.071416,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.078931,
+          "max_ms": 0.875362,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006059,
+          "max_ms": 0.001053,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.8482460000000002,
+          "max_ms": 0.183733,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-a",
+      "socket_cookie": "0000a",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.633170148Z",
+      "session_age_ms": 1804.335011,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.026551,
+          "max_ms": 0.023149,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.45680699999999996,
+          "max_ms": 0.084663,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.41890299999999997,
+          "max_ms": 0.081362,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.8604149999999997,
+          "max_ms": 1.14002,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006421,
+          "max_ms": 0.001286,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.7273990000000001,
+          "max_ms": 0.197065,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-b",
+      "socket_cookie": "0000b",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.690936153Z",
+      "session_age_ms": 1835.495025,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002667,
+          "max_ms": 0.00043,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.446181,
+          "max_ms": 0.14135,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.4141329999999999,
+          "max_ms": 0.13669,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.4071950000000006,
+          "max_ms": 0.935824,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006966,
+          "max_ms": 0.001285,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.7886310000000001,
+          "max_ms": 0.246873,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-c",
+      "socket_cookie": "0000c",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.771316206Z",
+      "session_age_ms": 1821.060836,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.00261,
+          "max_ms": 0.000404,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.565855,
+          "max_ms": 0.15158,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.394651,
+          "max_ms": 0.075781,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.1620800000000004,
+          "max_ms": 1.280766,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.015885999999999997,
+          "max_ms": 0.010197,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.802745,
+          "max_ms": 0.232112,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-d",
+      "socket_cookie": "0000d",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.841808052Z",
+      "session_age_ms": 1806.343462,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003116,
+          "max_ms": 0.000658,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.35700499999999996,
+          "max_ms": 0.07897,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.30711099999999997,
+          "max_ms": 0.076001,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.7431750000000004,
+          "max_ms": 1.196846,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005099,
+          "max_ms": 0.001162,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.787467,
+          "max_ms": 0.259208,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-e",
+      "socket_cookie": "0000e",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.868452344Z",
+      "session_age_ms": 1793.015382,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0034269999999999995,
+          "max_ms": 0.000988,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.483498,
+          "max_ms": 0.104944,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.39543300000000003,
+          "max_ms": 0.100764,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 7.275359000000001,
+          "max_ms": 2.149236,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0061189999999999994,
+          "max_ms": 0.001329,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 3.472406,
+          "max_ms": 2.17129,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-f",
+      "socket_cookie": "0000f",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.957484479Z",
+      "session_age_ms": 1789.547753,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0029179999999999996,
+          "max_ms": 0.00047,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.399065,
+          "max_ms": 0.08685,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.36583,
+          "max_ms": 0.079166,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.3013280000000003,
+          "max_ms": 1.092491,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.004837,
+          "max_ms": 0.000913,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.772049,
+          "max_ms": 0.278244,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-10",
+      "socket_cookie": "00010",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:10.993934293Z",
+      "session_age_ms": 1758.606249,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0033169999999999996,
+          "max_ms": 0.000706,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5133920000000001,
+          "max_ms": 0.142952,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.47900099999999995,
+          "max_ms": 0.136017,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 5.863004,
+          "max_ms": 2.227379,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006434,
+          "max_ms": 0.001395,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 2.4999070000000003,
+          "max_ms": 1.729848,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-11",
+      "socket_cookie": "00011",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.057565707Z",
+      "session_age_ms": 1784.932009,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002508,
+          "max_ms": 0.000483,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.34504,
+          "max_ms": 0.079636,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.289323,
+          "max_ms": 0.06401,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.9205639999999997,
+          "max_ms": 0.716955,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.00506,
+          "max_ms": 0.000988,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.472252,
+          "max_ms": 0.107799,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-12",
+      "socket_cookie": "00012",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.10140527Z",
+      "session_age_ms": 1770.359977,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002393,
+          "max_ms": 0.000376,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.37893599999999994,
+          "max_ms": 0.077947,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.35008500000000004,
+          "max_ms": 0.074057,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 6.303483,
+          "max_ms": 2.61738,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005297,
+          "max_ms": 0.000857,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.0326710000000001,
+          "max_ms": 0.584262,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-13",
+      "socket_cookie": "00013",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.16018335Z",
+      "session_age_ms": 1786.73343,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002995,
+          "max_ms": 0.000663,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.44596299999999994,
+          "max_ms": 0.094424,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.413335,
+          "max_ms": 0.090722,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 5.776176,
+          "max_ms": 4.060778,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006016,
+          "max_ms": 0.001484,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.618742,
+          "max_ms": 0.18712,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-14",
+      "socket_cookie": "00014",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.186290425Z",
+      "session_age_ms": 1753.82438,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003422,
+          "max_ms": 0.000633,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.520311,
+          "max_ms": 0.098997,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.460106,
+          "max_ms": 0.094396,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 6.736978999999999,
+          "max_ms": 2.059592,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005928,
+          "max_ms": 0.001458,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.38991,
+          "max_ms": 0.759749,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-15",
+      "socket_cookie": "00015",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.259188924Z",
+      "session_age_ms": 1795.475038,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0023539999999999998,
+          "max_ms": 0.000412,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.366819,
+          "max_ms": 0.093675,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.33580600000000005,
+          "max_ms": 0.089897,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.992542,
+          "max_ms": 0.764159,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.008188,
+          "max_ms": 0.001874,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.046557,
+          "max_ms": 0.441501,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-16",
+      "socket_cookie": "00016",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.279088284Z",
+      "session_age_ms": 1738.849609,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0033160000000000004,
+          "max_ms": 0.000774,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.578874,
+          "max_ms": 0.198911,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.517685,
+          "max_ms": 0.19535,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 4.434929,
+          "max_ms": 1.679665,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005522999999999999,
+          "max_ms": 0.001045,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.225301,
+          "max_ms": 0.636245,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-17",
+      "socket_cookie": "00017",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.351978687Z",
+      "session_age_ms": 1788.034318,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002842,
+          "max_ms": 0.000551,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.33092199999999994,
+          "max_ms": 0.060808,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.300336,
+          "max_ms": 0.056469,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 6.328178,
+          "max_ms": 3.603897,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.017304,
+          "max_ms": 0.011824,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.5117229999999999,
+          "max_ms": 0.137449,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-18",
+      "socket_cookie": "00018",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.372286883Z",
+      "session_age_ms": 1721.850646,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0034519999999999998,
+          "max_ms": 0.000534,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 3.1598990000000002,
+          "max_ms": 2.530221,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 3.030499,
+          "max_ms": 2.517688,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 4.486304,
+          "max_ms": 2.277436,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.004899000000000001,
+          "max_ms": 0.000984,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.9841329999999999,
+          "max_ms": 0.460026,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-19",
+      "socket_cookie": "00019",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.453456431Z",
+      "session_age_ms": 1723.145407,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.00253,
+          "max_ms": 0.000524,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.35912900000000003,
+          "max_ms": 0.073102,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.33131999999999995,
+          "max_ms": 0.070362,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 6.506602,
+          "max_ms": 2.862495,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005024999999999999,
+          "max_ms": 0.001,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.60758,
+          "max_ms": 0.174157,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-1a",
+      "socket_cookie": "0001a",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.479341849Z",
+      "session_age_ms": 1719.324548,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002186,
+          "max_ms": 0.000369,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.394337,
+          "max_ms": 0.079081,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.36823500000000003,
+          "max_ms": 0.076503,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.014524,
+          "max_ms": 1.302582,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.004971,
+          "max_ms": 0.000973,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.649273,
+          "max_ms": 0.182048,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-1b",
+      "socket_cookie": "0001b",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.54558727Z",
+      "session_age_ms": 1765.016641,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003045,
+          "max_ms": 0.000769,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.549869,
+          "max_ms": 0.136774,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.516554,
+          "max_ms": 0.132204,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 52.035523999999995,
+          "max_ms": 48.213743,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006939,
+          "max_ms": 0.001442,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 4.753479,
+          "max_ms": 2.754688,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-1c",
+      "socket_cookie": "0001c",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.56556965Z",
+      "session_age_ms": 1694.119698,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002961,
+          "max_ms": 0.000635,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.668145,
+          "max_ms": 0.163543,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.630438,
+          "max_ms": 0.159712,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 6.254352999999999,
+          "max_ms": 1.957627,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006286,
+          "max_ms": 0.001619,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 2.9119939999999995,
+          "max_ms": 2.21072,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-1d",
+      "socket_cookie": "0001d",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.642273481Z",
+      "session_age_ms": 1704.590784,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003173,
+          "max_ms": 0.000937,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.709004,
+          "max_ms": 0.315665,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.6456189999999999,
+          "max_ms": 0.308837,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 6.8821460000000005,
+          "max_ms": 2.344158,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005108,
+          "max_ms": 0.001221,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.797747,
+          "max_ms": 0.250916,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-1e",
+      "socket_cookie": "0001e",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.665978305Z",
+      "session_age_ms": 1691.439638,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002202,
+          "max_ms": 0.000416,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.35391000000000006,
+          "max_ms": 0.093583,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.326574,
+          "max_ms": 0.088489,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.03711,
+          "max_ms": 0.80213,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005489999999999999,
+          "max_ms": 0.000936,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.605224,
+          "max_ms": 0.239124,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-1f",
+      "socket_cookie": "0001f",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.756205635Z",
+      "session_age_ms": 1696.744086,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0048649999999999995,
+          "max_ms": 0.001239,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 9.168078,
+          "max_ms": 4.337619,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 4.612953,
+          "max_ms": 3.73711,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 14.092142000000003,
+          "max_ms": 8.524399,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.08462299999999999,
+          "max_ms": 0.080006,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.398136,
+          "max_ms": 0.758418,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-20",
+      "socket_cookie": "00020",
+      "status": "evicted",
+      "inflight_known": false,
+      "captured_at": "2026-10-18T08:23:11.830696022Z",
+      "session_age_ms": 1721.318518,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": false,
+      "waiter_overflow_total": 0,
+      "active": null,
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002137,
+          "max_ms": 0.000365,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.389712,
+          "max_ms": 0.156225,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.36610799999999993,
+          "max_ms": 0.153967,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.6470789999999997,
+          "max_ms": 0.85456,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005457,
+          "max_ms": 0.000919,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.8074349999999999,
+          "max_ms": 0.258395,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-21",
+      "socket_cookie": "00021",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370834133Z",
+      "session_age_ms": 6515.569586,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6512.110401
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0022770000000000004,
+          "max_ms": 0.000376,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.424829,
+          "max_ms": 0.093227,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.392928,
+          "max_ms": 0.08897,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.8531230000000005,
+          "max_ms": 0.731449,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.004946,
+          "max_ms": 0.00079,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.526729,
+          "max_ms": 0.137782,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-22",
+      "socket_cookie": "00022",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370856387Z",
+      "session_age_ms": 6438.819046,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6435.010757
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.00221,
+          "max_ms": 0.000339,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.43656799999999996,
+          "max_ms": 0.179066,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.408225,
+          "max_ms": 0.174337,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.0517129999999995,
+          "max_ms": 0.931703,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005567999999999999,
+          "max_ms": 0.000847,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.6362099999999999,
+          "max_ms": 0.143897,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-23",
+      "socket_cookie": "00023",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370878614Z",
+      "session_age_ms": 8107.203235,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 8103.517708
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0030410000000000003,
+          "max_ms": 0.000642,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.44496700000000006,
+          "max_ms": 0.103144,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.413429,
+          "max_ms": 0.100457,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.728113,
+          "max_ms": 0.800795,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006463,
+          "max_ms": 0.001146,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.825366,
+          "max_ms": 0.245849,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-24",
+      "socket_cookie": "00024",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370880098Z",
+      "session_age_ms": 8085.043654,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 8041.865936
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0025679999999999995,
+          "max_ms": 0.000473,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.626158,
+          "max_ms": 0.310014,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.596004,
+          "max_ms": 0.306578,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 42.102984,
+          "max_ms": 39.277312,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.007127,
+          "max_ms": 0.001612,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.956968,
+          "max_ms": 0.353969,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-25",
+      "socket_cookie": "00025",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370881097Z",
+      "session_age_ms": 8009.830203,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 8005.896668
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002941,
+          "max_ms": 0.000743,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5067740000000001,
+          "max_ms": 0.139467,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.47685900000000003,
+          "max_ms": 0.134347,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.077241,
+          "max_ms": 0.997733,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0059570000000000005,
+          "max_ms": 0.001211,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.671763,
+          "max_ms": 0.166373,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-26",
+      "socket_cookie": "00026",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370881943Z",
+      "session_age_ms": 7943.459991,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7935.512596
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002911,
+          "max_ms": 0.000423,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.460457,
+          "max_ms": 0.087138,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.42767299999999997,
+          "max_ms": 0.082612,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 7.016907000000001,
+          "max_ms": 2.450835,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006783,
+          "max_ms": 0.001474,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.7636559999999999,
+          "max_ms": 0.229187,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-27",
+      "socket_cookie": "00027",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370882922Z",
+      "session_age_ms": 7910.810503,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7907.413743
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002131,
+          "max_ms": 0.00034,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.310462,
+          "max_ms": 0.062898,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.283139,
+          "max_ms": 0.059586,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.758367,
+          "max_ms": 0.717677,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005913999999999999,
+          "max_ms": 0.001155,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.536135,
+          "max_ms": 0.166794,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-28",
+      "socket_cookie": "00028",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370883794Z",
+      "session_age_ms": 7837.989468,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7832.971829
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002276,
+          "max_ms": 0.000348,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.340961,
+          "max_ms": 0.063175,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.312033,
+          "max_ms": 0.058563,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 4.157728,
+          "max_ms": 1.965855,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.023826000000000003,
+          "max_ms": 0.01784,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.73088,
+          "max_ms": 0.205473,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-29",
+      "socket_cookie": "00029",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370885071Z",
+      "session_age_ms": 7815.775964,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7811.473219
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002685,
+          "max_ms": 0.000619,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.934991,
+          "max_ms": 0.583626,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.8819150000000001,
+          "max_ms": 0.561007,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.5736040000000004,
+          "max_ms": 0.799187,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006469000000000001,
+          "max_ms": 0.001263,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.600177,
+          "max_ms": 0.306654,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-2a",
+      "socket_cookie": "0002a",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370885887Z",
+      "session_age_ms": 7737.708649,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7728.254625
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003683,
+          "max_ms": 0.000702,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5546479999999999,
+          "max_ms": 0.105766,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.512304,
+          "max_ms": 0.097109,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 8.257269,
+          "max_ms": 2.988204,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.007592,
+          "max_ms": 0.001928,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.047014,
+          "max_ms": 0.294674,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-2b",
+      "socket_cookie": "0002b",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370886781Z",
+      "session_age_ms": 7679.945019,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7676.220567
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002929,
+          "max_ms": 0.00062,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.438811,
+          "max_ms": 0.076534,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.40305,
+          "max_ms": 0.073299,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.792522,
+          "max_ms": 0.87145,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005731999999999999,
+          "max_ms": 0.001189,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.7572800000000001,
+          "max_ms": 0.183805,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-2c",
+      "socket_cookie": "0002c",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370887629Z",
+      "session_age_ms": 7599.565714,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7576.487978
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003949,
+          "max_ms": 0.000776,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5940169999999999,
+          "max_ms": 0.119265,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.491518,
+          "max_ms": 0.109284,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 11,
+          "total_ms": 19.575088000000004,
+          "max_ms": 13.650706,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.007392,
+          "max_ms": 0.001339,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 3.3480860000000003,
+          "max_ms": 2.575228,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-2d",
+      "socket_cookie": "0002d",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370888366Z",
+      "session_age_ms": 7529.075643,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7525.677457
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002895,
+          "max_ms": 0.000618,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.594427,
+          "max_ms": 0.177346,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5609770000000001,
+          "max_ms": 0.172604,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.6328290000000005,
+          "max_ms": 0.866511,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.00527,
+          "max_ms": 0.001181,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.6378250000000001,
+          "max_ms": 0.220035,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-2e",
+      "socket_cookie": "0002e",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370889327Z",
+      "session_age_ms": 7502.431788,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7496.665467
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002959,
+          "max_ms": 0.000539,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.443679,
+          "max_ms": 0.124272,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.41058100000000003,
+          "max_ms": 0.117274,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 4.41328,
+          "max_ms": 1.144784,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.015969,
+          "max_ms": 0.009487,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.111,
+          "max_ms": 0.339588,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-2f",
+      "socket_cookie": "0002f",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370890095Z",
+      "session_age_ms": 7413.40086,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7408.824332
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002242,
+          "max_ms": 0.000357,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.35596300000000003,
+          "max_ms": 0.064151,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.328467,
+          "max_ms": 0.060985,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.904124000000001,
+          "max_ms": 2.448074,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0046570000000000005,
+          "max_ms": 0.000949,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.562456,
+          "max_ms": 0.171126,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-30",
+      "socket_cookie": "00030",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370891009Z",
+      "session_age_ms": 7376.952576,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7365.068947
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0024820000000000003,
+          "max_ms": 0.000509,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.359485,
+          "max_ms": 0.058118,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.308571,
+          "max_ms": 0.055075,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 10.970644,
+          "max_ms": 4.352478,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006888,
+          "max_ms": 0.001368,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.7634479999999999,
+          "max_ms": 0.319664,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-31",
+      "socket_cookie": "00031",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370891921Z",
+      "session_age_ms": 7313.320103,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7306.200346
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0023529999999999996,
+          "max_ms": 0.000377,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.329232,
+          "max_ms": 0.081349,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.30092599999999997,
+          "max_ms": 0.077419,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 6.0215950000000005,
+          "max_ms": 1.588682,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.007245000000000001,
+          "max_ms": 0.001661,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.881047,
+          "max_ms": 0.206547,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-32",
+      "socket_cookie": "00032",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370892657Z",
+      "session_age_ms": 7269.482449,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7265.993044
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.001904,
+          "max_ms": 0.000293,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.389529,
+          "max_ms": 0.135376,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.36563300000000004,
+          "max_ms": 0.132051,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.74082,
+          "max_ms": 0.737545,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005313999999999999,
+          "max_ms": 0.000856,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.64321,
+          "max_ms": 0.15438,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-33",
+      "socket_cookie": "00033",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370893393Z",
+      "session_age_ms": 7210.705119,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7206.8245
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.00242,
+          "max_ms": 0.000393,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.376237,
+          "max_ms": 0.068575,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.32062199999999996,
+          "max_ms": 0.06299,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.5738989999999995,
+          "max_ms": 0.758036,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0051649999999999995,
+          "max_ms": 0.001053,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.186644,
+          "max_ms": 0.66407,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-34",
+      "socket_cookie": "00034",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370894409Z",
+      "session_age_ms": 7184.597714,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7132.879485
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.004519,
+          "max_ms": 0.001607,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.7574369999999999,
+          "max_ms": 0.348602,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.4538360000000001,
+          "max_ms": 0.103227,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 46.330503,
+          "max_ms": 39.846105,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0061589999999999995,
+          "max_ms": 0.001528,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.392187,
+          "max_ms": 0.466576,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-35",
+      "socket_cookie": "00035",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370895251Z",
+      "session_age_ms": 7111.698903,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7107.956689
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002194,
+          "max_ms": 0.000361,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.341492,
+          "max_ms": 0.071504,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.316643,
+          "max_ms": 0.06811,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.862172,
+          "max_ms": 0.898535,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006134,
+          "max_ms": 0.001041,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.774081,
+          "max_ms": 0.231728,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-36",
+      "socket_cookie": "00036",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370895971Z",
+      "session_age_ms": 7091.803652,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7036.29252
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0027770000000000004,
+          "max_ms": 0.000699,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.401885,
+          "max_ms": 0.076643,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.3737749999999999,
+          "max_ms": 0.072263,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 54.624091,
+          "max_ms": 50.932968,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0078119999999999995,
+          "max_ms": 0.002117,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.745534,
+          "max_ms": 0.184757,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-37",
+      "socket_cookie": "00037",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370896982Z",
+      "session_age_ms": 7018.914347,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 7013.966276
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.00201,
+          "max_ms": 0.000294,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.29491100000000003,
+          "max_ms": 0.067282,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.268404,
+          "max_ms": 0.063464,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.326793,
+          "max_ms": 0.748186,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005662,
+          "max_ms": 0.000967,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 2.515969,
+          "max_ms": 1.96038,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-38",
+      "socket_cookie": "00038",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370897822Z",
+      "session_age_ms": 6998.606654,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6941.248858
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0032879999999999997,
+          "max_ms": 0.000964,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5415590000000001,
+          "max_ms": 0.162028,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.507282,
+          "max_ms": 0.152675,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.07273,
+          "max_ms": 0.86516,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.024833999999999995,
+          "max_ms": 0.018614,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 54.144781,
+          "max_ms": 53.556358,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-39",
+      "socket_cookie": "00039",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.370968112Z",
+      "session_age_ms": 6917.50779,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6908.867222
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002378,
+          "max_ms": 0.000459,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.328084,
+          "max_ms": 0.082186,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.300258,
+          "max_ms": 0.075958,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.687948,
+          "max_ms": 1.713213,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005973000000000001,
+          "max_ms": 0.001171,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 4.861038,
+          "max_ms": 4.378507,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-3a",
+      "socket_cookie": "0003a",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.371014719Z",
+      "session_age_ms": 6891.66795,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6888.477418
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0023740000000000002,
+          "max_ms": 0.00043,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.35622699999999996,
+          "max_ms": 0.134462,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.329389,
+          "max_ms": 0.131468,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.369527,
+          "max_ms": 0.678579,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.0046289999999999994,
+          "max_ms": 0.00082,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.7082390000000001,
+          "max_ms": 0.187424,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-3b",
+      "socket_cookie": "0003b",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.371016338Z",
+      "session_age_ms": 6825.424755,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6822.224783
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003001,
+          "max_ms": 0.000506,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.573953,
+          "max_ms": 0.141458,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5415760000000001,
+          "max_ms": 0.136785,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 11,
+          "total_ms": 2.2967109999999997,
+          "max_ms": 0.873903,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.006443,
+          "max_ms": 0.001022,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.7585780000000001,
+          "max_ms": 0.201521,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-3c",
+      "socket_cookie": "0003c",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.37101714Z",
+      "session_age_ms": 6805.443315,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6797.837649
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002712,
+          "max_ms": 0.000626,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 3.9497370000000003,
+          "max_ms": 3.593146,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 3.918885,
+          "max_ms": 3.58773,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.2548290000000004,
+          "max_ms": 0.949751,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.014915999999999999,
+          "max_ms": 0.0095,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 4.247481,
+          "max_ms": 3.725864,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-3d",
+      "socket_cookie": "0003d",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.371018119Z",
+      "session_age_ms": 6728.706293,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6724.554996
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.002776,
+          "max_ms": 0.000424,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.550465,
+          "max_ms": 0.142808,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.46619900000000003,
+          "max_ms": 0.138887,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.1626319999999994,
+          "max_ms": 1.198048,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.006085,
+          "max_ms": 0.001212,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.8689079999999999,
+          "max_ms": 0.26836,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-3e",
+      "socket_cookie": "0003e",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.37101918Z",
+      "session_age_ms": 6705.035944,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6645.092831
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.003228,
+          "max_ms": 0.000644,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 56.150023000000004,
+          "max_ms": 55.632182,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 55.973786,
+          "max_ms": 55.624863,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.280739,
+          "max_ms": 1.210664,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005422,
+          "max_ms": 0.001073,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 56.453288,
+          "max_ms": 55.799306,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-3f",
+      "socket_cookie": "0003f",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.371019964Z",
+      "session_age_ms": 6614.808518,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6610.478561
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.0034679999999999997,
+          "max_ms": 0.000674,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.553263,
+          "max_ms": 0.12885,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.510523,
+          "max_ms": 0.126144,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 2.9902230000000003,
+          "max_ms": 1.186357,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.005704000000000001,
+          "max_ms": 0.001139,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 1.189241,
+          "max_ms": 0.630547,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    },
+    {
+      "session": "0000000000000000-40",
+      "socket_cookie": "00040",
+      "status": "active",
+      "inflight_known": true,
+      "captured_at": "2026-10-18T08:23:18.371032644Z",
+      "session_age_ms": 6540.332337,
+      "pending_writers": 0,
+      "tracked_waiters": 0,
+      "writer_wait_coverage_complete": true,
+      "waiter_overflow_total": 0,
+      "active": [
+        {
+          "stage": "read_header",
+          "frame_class": "unknown",
+          "bytes": 7,
+          "age_ms": 6535.419088
+        }
+      ],
+      "metrics": [
+        {
+          "count": 8,
+          "total_ms": 0.00238,
+          "max_ms": 0.000494,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.60242,
+          "max_ms": 0.222695,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 8,
+          "total_ms": 0.5569719999999999,
+          "max_ms": 0.219707,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 12,
+          "total_ms": 3.9577790000000004,
+          "max_ms": 1.777237,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 9,
+          "total_ms": 0.004769,
+          "max_ms": 0.000992,
+          "errors": 0,
+          "slow_count": 0
+        },
+        {
+          "count": 6,
+          "total_ms": 0.8318030000000001,
+          "max_ms": 0.271454,
+          "errors": 0,
+          "slow_count": 0
+        }
+      ]
+    }
+  ],
+  "slow_events": null
+}

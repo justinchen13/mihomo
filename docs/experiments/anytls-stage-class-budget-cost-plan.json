@@ -1,0 +1,121 @@
+{
+  "schema": "s1-cost-plan-1",
+  "status": "STATIC_NOT_EXECUTABLE_PENDING_CANDIDATE_BUILD_AND_ROOT_INPUT_REVIEW",
+  "prepared_utc": "2026-10-18T09:11:03.477071+00:00",
+  "question": "Incremental total deployed combination cost: current production5f89 with schema1 producer+current reader ON versus class-budget producer+schema2-compatible reader ON. Does not infer isolated code cost or public Internet speed.",
+  "reference_plan_sha256": "a17377f895a62ac6ae43b6579da6f5babe587572a9fe0f2dd28557bdd406a3bf",
+  "numeric_gates_unchanged": {
+    "parent_and_proxy": "first1s AND full-workload throttled_seconds/wall <=0.10. Allparent/proxy/collector memory high,max,oom,oom_kill delta0.",
+    "proxy_cpu": "alltrial proxyCPU>=0.20s; medianB CPU/verifiedreceived decimalMB <=1.20*medianA, unchanged",
+    "collector_cpu": "collector cgroup usage_usec includes its subprocesses. EachbaselineA >=100000us (0.10s); otherwise UNKNOWN_COST_BASELINE, ratio=null. Sufficientbaseline medianB CPU/verifiedreceived decimalMB <=1.20*medianA. Allpertrial/paired CPU, absolutes and withinarm sample variance retained. No adaptive threshold/load/window.",
+    "goodput": "medianB exact bulkdecimalMB/s >=0.95*medianA",
+    "rss": "medianB proxy peakRSS minusmedianA <=16MiB",
+    "median_p95": "fails only when Bmedian scheduled-to-verified P95 exceeds A by BOTH20percent AND5ms",
+    "paired_p95": "eachorientedpair fails only when B exceeds A by BOTH50percent AND20ms",
+    "observer_fitness": "original>=3regular cycles, each<=10s, gap<=11s, requiredfieldsknown, no API/parser/rollup/output/cursor failure, exact lastfooter. First/body/deadline semantics unchanged. Throttle is fully reported as actual observercost, not removed or represented as businessstall.",
+    "enabled_publication": "original>=3freshready, stableepoch/population, no missingseq, exactcookiejoin>=1, age<=25s, lostbatchdelta0, payloadlimitedfalse, activeinflightknown, finalackwritten+saved, no sharedstage logs.66 remains32tracked34untracked.",
+    "integrity": "all original v2 non-resource pertrial gates required, exact received expectedbodybytes and original positivecontrols. NaN/Infinity/negative/missing/retyped mandatory numeric fields=>UNKNOWN_INPUT; malformedorder/profile/missingfiles=>unknown/refuse.",
+    "observer_throttle": "Every originalfirst/full raw value and v2 resource verdict preserved in v3output. It is not the v3business saturation gate; any consequent miss in actualcycle/publication/cursor or businessmetrics still fails."
+  },
+  "workload_and_resources_unchanged": {
+    "whole_parent": "40percentCPU/512MiB/swap0",
+    "proxy_child": "40percentCPU/512MiB/swap0",
+    "observer_child": "10percentCPU/96MiB/swap0/Nice10",
+    "regular_seconds": 10,
+    "load": "same33s offeredload:67108864Bdown bulk,8388608Bupload,264small4096B; same frozen source/client/TLS/padding/exactSHA and original warmup/phase",
+    "stage_max_tracked": 32,
+    "stage_max_body_bytes": 65536
+  },
+  "profiles": [
+    1,
+    32,
+    66
+  ],
+  "order": "Fresh ABBA at1, then32, then66; each4 complete trials and all cost/functional/owned-cleanup gates must pass before next. Stop at first failure; no retry, no result pooling from prior12rounds.",
+  "arms": {
+    "A": {
+      "source_commit": "5f89b59bf00fda9f63f0ddf9ecabf5552d2a2a03",
+      "server_binary_sha256": "72b88783fbaac3bdf387c0e5b97355762c192f3a7627136344f10a81f09001f3",
+      "producer_enabled": true,
+      "reader_enabled": true,
+      "outer_schema": 1,
+      "inner_schema": 1,
+      "stage_http": 200,
+      "consumer_sha256": "2abd786c034445db26a0ad2d57c36d646b7eb7d32a361b19c10e14f2b75f953d",
+      "class_field_expectation": "unknown/null is expected capability absence, not failure"
+    },
+    "B": {
+      "source_branch": "pcs/stage-class-budget-20261018",
+      "source_commit": null,
+      "server_binary_sha256": null,
+      "producer_enabled": true,
+      "reader_enabled": true,
+      "outer_schema": 1,
+      "inner_schema": 2,
+      "stage_http": 200,
+      "consumer_sha256": "e9059f80a07d1ee5c9fec828b8292d461398f376bfd187bb5e2b7bcc2a9dae31",
+      "class_field_expectation": "All six fixed counters/quotas and omissions must survive exact private reader; no unknown class fields accepted"
+    }
+  },
+  "binding_changes_required": [
+    "Existing v4 numericcore SHA69e9da6239de50b7bb9c8cd3307dc4c5cc3f3c95d804d6e929e8f8c5af052554 remains unchanged; adapt only identity/capability binder to two enabled arms. Old v7 expected404/OFF baseline does not apply.",
+    "Eachresult/runtime must bind exact arm source+binary, consumer SHA, monitor/rollup/wrapper SHA, enabled flags, expected inner schema and200 route before/after. Do not reuse old labels to bypass checks.",
+    "Botharms require original freshready/sequence/cookie/age/cursor gates. Oldschema1 class fields remain unknown; newclass-specific invariants apply onlyB. Unknown/missing/NaN/retyped mandatory values remain invalid.",
+    "Keep originalv2resource verdict and every raw observer throttle value; do not relabel throttled observer as unthrottled or businessstall.",
+    "Current consumer/monitor installer source must be independently verified against deployed hashes; private patch is not yet a PCS runtime integration commit."
+  ],
+  "unchanged_client": {
+    "sha256": "04e096af257827a4c47fd14ff89d63afc5ec8eacb30c954d5c49bd0f8d26246b",
+    "fixture": "client127.0.0.2 vs origin/proxy127.0.0.1 actual bind/preGO verified; no loopback guard bypass"
+  },
+  "additional_cost_sources": {
+    "atomics": "For each>=100ms completed stage: attempted Add plus admitted OR dropped Add; onfull old lostSlow Add retained. Every dequeue adds one counter. Publication reads24 counters. Existing fast path for disabled evidence unchanged.",
+    "memory": "Five additional channel headers, same32 total elements, private time.Time completion field per retained event,24 atomic counters, six perbatch counter structs+six omission counters. Exact allocation/RSS measured, not assumed from approximate struct sizes.",
+    "sorting": "Stable sort at most32 completed events per10s publication. No new writepath mutex or logger IO.",
+    "output": "Fixedpolicy string +six class counter structs+six omission counts; within original64KiB cap. Measure exact JSONL bytes/publication and disk/append/fsync cost; schema2 trimming keeps omitted-by-class totals. Changed mix may produce fewer header events; do not assume reduced output or loss."
+  },
+  "multi_device_functional_qualification_before_cost": [
+    "Use at most32 retained synthetic authenticated sessions with fixed total32 event budget; header flood from multiple sessions cannot consume the reserved writer_wait8/writer_owned4/tls_write8/body6/pipe4 slots. Controlled useful events at/below eachquota must remain observable, with intactTLS/padding payload and cancellation teardown.",
+    "Generate abovequota events of eachclass from multiple retained sessions: queue cap/frequency stay fixed, exactdrop totals after quiescence, existing lostSlow equals sumclassdropped only atquiescence, no hidden replay. Active concurrent snapshots may not obey instantaneous conservation and must still sanitize.",
+    "Read_header remains visible up to2, with explicit drop accounting; do not classify all idle/header waits harmless.",
+    "No per-session fairness guarantee is introduced: onebusydevice may fill itsclassquota and otherdevices in the sameclass may be omitted. Report perclass coverage and preserve unknown; do not claim allusersrepresented. Registry32/66untracked34 unchanged.",
+    "Coverage fixtures are separate from unchanged33s costworkload. No additional induced delay/flood is injected into onlyone costarm or hidden in the denominator."
+  ],
+  "compatibility_rollback": [
+    "Private consumer must accept inner schema1 and2 with strictfixedenum/field validation, stableHMAC identity and no credential/target export. Preserve unknownschema1 class fields.",
+    "Validate and stage compatibleconsumer+installer first while producer remains schema1; then enable schema2 candidate. Newproducer with oldstrictconsumer is an explicit incompatibility.",
+    "Rollback producer to5f89/schema1 first; keep newconsumer until freshschema1 observations+cursor/outputverified, then optionaloldconsumer rollback. Preserveepoch/cursor barriers; do not replay oldcumulative counts as newevents.",
+    "Fresh finaltaggedGo1.25.6/with_gvisor/CGO0 binary, trueUnix-only route/TLS/auth/padding/runtime smoke and rollbackartifact identity must be validated separately before anyproduction switch."
+  ],
+  "disk_cleanup": {
+    "start_min_bytes": 1073741824,
+    "running_min_bytes": 629145600,
+    "expected_new_result_bytes": "prior12roundresult volume~28MB; exactdiskguard retained",
+    "ownership": "reuse realvalidatedv7 exactCID/image/label/Mounts/name+dev/inode/no-symlink verification; rm-f-v onlyowned anonymousvolumes; verifyAPI+directoryabsence; mutableCreatedAt reportonly; no named/bind/prune deletion"
+  },
+  "execution_blockers": [
+    "Candidatecommit/finalbinarySHA and fulltaggedruntime notyet available.",
+    "New capabilitybinder and productionconsumer integration must be frozen/reviewed; oldv7runner must not be run as-is with assumedfalse baselineflags.",
+    "No matrix authorized or executed by this staticplan."
+  ],
+  "old_results_preserved": true,
+  "production_changes": false,
+  "publication_size_qualification": {
+    "fixed_limits": {
+      "whole_response_bytes": 65536,
+      "inner_publication_bytes": 64512
+    },
+    "each_trial_reporting": [
+      "actual returned raw HTTP body bytes before parsing, with sameexisting polls/noextraAPIcalls",
+      "payload_limited count",
+      "omitted_sessions total/perpublication",
+      "omitted_slow_events and fixed6class omission counts",
+      "append/fsync completecost and rotation size"
+    ],
+    "matrix_gate": "Botharms retainoriginalpayload_limited=false gate. Candidate wholesale session/event omission is a failedqualification even ifqueueunitpasses; missingrawbytes unknown, neverzero.",
+    "fullest_existing_fixture": "docs/experiments/fixtures/anytls-stage-full-session.json;64realTLSlab snapshots/32live+32terminal, anonymized equalwidth IDs, no new production requests; exactGo boundary testcase required beforecost",
+    "fixture_sha256": "c3155ad6c1cf469da84fd0129142c8bb0dba157b54c3c6a70ed1e71eb317bf43",
+    "scope_limit": "Current6productionsegments contain sanitizedrecords; they are not exactproducerbodybyteproof. Do not present reserializedconsumerbytes as originalwirebytes.",
+    "action_on_failure": "HOLD with preservedold/new sizes and omissioncounters; do not increase64KiBlimit or silently omit evidence to pass."
+  }
+}

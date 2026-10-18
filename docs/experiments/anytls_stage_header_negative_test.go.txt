@@ -1,0 +1,29 @@
+package session
+
+import ("testing"; "time")
+
+func TestStageSlowHeaderFloodCannotConsumeOtherClasses(t *testing.T) {
+	h := testStageHub(t)
+	e := h.attach(nil)
+	defer e.close()
+	for i := 0; i < 64; i++ {
+		op := e.beginRead(stageReadHeader, cmdPSH, 7)
+		op.started = time.Now().Add(-200 * time.Millisecond)
+		e.finishRead(op, nil)
+	}
+	for _, stage := range []int{stageReadBody, stagePipeWrite} {
+		op := e.beginRead(stage, cmdPSH, 1024)
+		op.started = time.Now().Add(-200 * time.Millisecond)
+		e.finishRead(op, nil)
+	}
+	batch := h.collect(time.Now())
+	counts := make(map[string]int)
+	for _, event := range batch.SlowEvents {
+		counts[event.Stage]++
+	}
+	t.Logf("S1_COUNTS header=%d body=%d pipe=%d", counts["read_header"], counts["read_body"], counts["pipe_write"])
+	if counts["read_header"] != 2 || counts["read_body"] != 1 || counts["pipe_write"] != 1 {
+		t.Fatalf("header flood consumed other-stage evidence: %v", counts)
+	}
+}
+

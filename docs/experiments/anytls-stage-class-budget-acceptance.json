@@ -1,0 +1,183 @@
+{
+  "status": "TARGET_CORRECTNESS_AND_CONSUMER_PASS_NOT_RELEASE_ACCEPTANCE",
+  "generated_utc": "2026-10-18T09:07:34.378950+00:00",
+  "source_base": "5f89b59bf00fda9f63f0ddf9ecabf5552d2a2a03",
+  "source_branch": "pcs/stage-class-budget-20261018",
+  "source_freeze_sha256": "91bb2595996f4987a20f398b28f0c0a11b8056af56f6f0a42b14cea7fb2ed054",
+  "execution_manifest_sha256": "d3ead42dc0c2e09e36323e1b4960a18859a53167578aaf948621fc5333f44455",
+  "phases": [
+    {
+      "phase": "baseline",
+      "status": "EXPECTED_FAILURE_REPRODUCED",
+      "started_utc": "2026-10-18T09:04:06.205508+00:00",
+      "ended_utc": "2026-10-18T09:05:16.127287+00:00",
+      "minimum_free_bytes": 2142715904,
+      "start_free_bytes": 2219692032,
+      "end_free_bytes": 2185113600,
+      "container_exit_code": 1,
+      "attach_exit_code": 1,
+      "tests_run": [
+        "TestStageSlowHeaderFloodCannotConsumeOtherClasses"
+      ],
+      "tests_passed": [],
+      "tests_failed": [
+        "TestStageSlowHeaderFloodCannotConsumeOtherClasses"
+      ],
+      "tests_required": null,
+      "oom_killed": false,
+      "guard_reason": null,
+      "owned_cleanup": true,
+      "anonymous_volumes": 0,
+      "evidence_sha256": {
+        "result.json": "01eb951c6f6632b26d4fc132b4089934730418b41095e5d87f26f39ecfa94bdc",
+        "stdout.log": "876a59bff1e70ec223012cdbb8670b4ceee10c902550eec9b4f709ca7adbc7b7",
+        "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "phase": "normal",
+      "status": "PASS",
+      "started_utc": "2026-10-18T09:05:16.209694+00:00",
+      "ended_utc": "2026-10-18T09:05:28.063951+00:00",
+      "minimum_free_bytes": 2169327616,
+      "start_free_bytes": 2184904704,
+      "end_free_bytes": 2181967872,
+      "container_exit_code": 0,
+      "attach_exit_code": 0,
+      "tests_run": [
+        "TestStageSlowClassesBoundedAndQuiescentAccounting",
+        "TestStageSlowClassesPayloadOmissionsSeparateFromQueueDrops",
+        "TestStageSlowHeaderFloodCannotConsumeOtherClasses",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/303",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/304"
+      ],
+      "tests_passed": [
+        "TestStageSlowClassesBoundedAndQuiescentAccounting",
+        "TestStageSlowClassesPayloadOmissionsSeparateFromQueueDrops",
+        "TestStageSlowHeaderFloodCannotConsumeOtherClasses",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/303",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/304"
+      ],
+      "tests_failed": [],
+      "tests_required": null,
+      "oom_killed": false,
+      "guard_reason": null,
+      "owned_cleanup": true,
+      "anonymous_volumes": 0,
+      "evidence_sha256": {
+        "result.json": "cca501943c60ec2c440aedf827e071d2a8be3bf2943ed35e47b1e7da998bdcd9",
+        "stdout.log": "21da389bb1d68d26d0b957b021ea0ce117eadc3c0f8721bd541698e565a77f22",
+        "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "phase": "race",
+      "status": "PASS",
+      "started_utc": "2026-10-18T09:05:28.136697+00:00",
+      "ended_utc": "2026-10-18T09:06:24.549404+00:00",
+      "minimum_free_bytes": 2110394368,
+      "start_free_bytes": 2181955584,
+      "end_free_bytes": 2151731200,
+      "container_exit_code": 0,
+      "attach_exit_code": 0,
+      "tests_run": [
+        "TestStageSlowClassesBoundedAndQuiescentAccounting",
+        "TestStageSlowClassesPayloadOmissionsSeparateFromQueueDrops",
+        "TestStageSlowHeaderFloodCannotConsumeOtherClasses",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/303",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/304"
+      ],
+      "tests_passed": [
+        "TestStageSlowClassesBoundedAndQuiescentAccounting",
+        "TestStageSlowClassesPayloadOmissionsSeparateFromQueueDrops",
+        "TestStageSlowHeaderFloodCannotConsumeOtherClasses",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/303",
+        "TestStageSlowHeaderFloodPreservesRealTLSStages/304"
+      ],
+      "tests_failed": [],
+      "tests_required": null,
+      "oom_killed": false,
+      "guard_reason": null,
+      "owned_cleanup": true,
+      "anonymous_volumes": 0,
+      "evidence_sha256": {
+        "result.json": "4d7c5a862ccad38370e30801906c3d7dbfce677caa0e3e7fa428deecd5e55568",
+        "stdout.log": "5ee30d495e86636eddcb0f40bbc618f2f12477ec2a99186c16279988212b27ff",
+        "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "phase": "consumer",
+      "status": "PASS",
+      "started_utc": "2026-10-18T09:06:24.641795+00:00",
+      "ended_utc": "2026-10-18T09:06:25.662292+00:00",
+      "minimum_free_bytes": 2151714816,
+      "start_free_bytes": 2151718912,
+      "end_free_bytes": 2151714816,
+      "container_exit_code": null,
+      "attach_exit_code": 0,
+      "tests_run": null,
+      "tests_passed": null,
+      "tests_failed": null,
+      "tests_required": 10,
+      "oom_killed": null,
+      "guard_reason": null,
+      "owned_cleanup": true,
+      "anonymous_volumes": null,
+      "evidence_sha256": {
+        "result.json": "62bf3d54d3ec7e1ffe13ddf436737507e9ac0b7b3f252ce7dcb546186475d18b",
+        "stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr.log": "cb3dd91dd6a11029af2838fe8f9d4bbff644f5835cc2abb35105a448b8f50334"
+      }
+    }
+  ],
+  "causal_result": {
+    "old_negative_counts": {
+      "read_header": 32,
+      "read_body": 0,
+      "pipe_write": 0
+    },
+    "candidate_pure_flood_assertions": {
+      "read_header": 2,
+      "read_body": 1,
+      "pipe_write": 1
+    },
+    "real_tls": "TLS1.2/1.3 exact4096-byte DATA+FIN preserved; completed TLS/writer-wait/writer-owned evidence survives64 header events",
+    "queue_accounting": "Fixed6 classes capacities8/4/8/2/6/4 total32; each5 excess yields30 total drops; ordering/next-publication no replay; body-limit omissions separately counted"
+  },
+  "semantics": [
+    "Total slow-event loss need not decrease: reserved capacity intentionally prevents header-only saturation from erasing other stages; unused class quota is not lent in S1.",
+    "A header wait can be idle or harmful; it remains visible with quota2 and explicit attempted/admitted/dropped/dequeued.",
+    "Dequeued does not mean delivered; batch/export/payload losses remain separate; concurrent counters are non-atomic, conservation asserted only at quiescence.",
+    "Inner schema2 requires validated backward-compatible consumer before producer; oldschema1 class fields remain unknown/null. Outer Unix envelope1 and64KiB bound unchanged.",
+    "Registry cap32, untracked sessions, short-connection event-time TCP gaps and defaultoff behavior are not changed by S1."
+  ],
+  "boundaries": [
+    "No baseline TLS test; no rejected route-blocking fixture executed.",
+    "No production/source-pin/PCSshared edit, no system/network parameter change.",
+    "Target race covers selected fixtures, not a claim that the entire Mihomo client/server is race-free.",
+    "Full official-tagged binary/runtime and fresh direct-old-production to enabled 1/32/66 cost/security acceptance remain outstanding; previous12runPASS cannot be inherited.",
+    "No claim of Internet speed, latency or user failure-rate improvement."
+  ],
+  "resource_contract": {
+    "cpu_fraction": 0.35,
+    "memory_bytes": 536870912,
+    "memory_swap_bytes": 536870912,
+    "GOMEMLIMIT": "320MiB",
+    "GOMAXPROCS": "1",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "module_mode": "readonly",
+    "network": "none",
+    "start_disk_min_bytes": 1073741824,
+    "running_disk_min_bytes": 629145600,
+    "phase_deadline_seconds": 180
+  },
+  "total_started_utc": "2026-10-18T09:04:06.205508+00:00",
+  "total_ended_utc": "2026-10-18T09:06:25.662292+00:00",
+  "owned_container_and_volume_cleanup": "All3Go phases verified exact owner+image+bind-only Mounts, rm-f-v, inspect notfound; zero implicit or anonymous volumes."
+}

@@ -1,0 +1,13 @@
+{
+  "status": "EXISTING_REAL_TLS_LAB_CAPTURE_ANONYMIZED_BOUNDARY_INPUT_NOT_YET_GO_VALIDATED",
+  "source_sha256": "63ecda0f9746c2617c005d64cf5efeac09af8b9b1e292de0db389ebf38b135a2",
+  "source_kind": "Existing66outer-session v7 actualTLS warmup,32live+32terminal snapshots; not production wire raw",
+  "fixture_sha256": "c3155ad6c1cf469da84fd0129142c8bb0dba157b54c3c6a70ed1e71eb317bf43",
+  "sessions": 64,
+  "live": 32,
+  "slow_events": 0,
+  "privacy": "All originalepoch/session/cookie values replaced; exact string lengths retained. No credential, target or payload fields present.",
+  "length_caveat": "Python compact serialization only ranks retained inputs; final byte gate must use actual Go json.Marshal/publish. Natural production files retain sanitized data, not exact original producer bodies.",
+  "go_case_required": "Load exact fixture. Canonical baseline projection removes only3newclassfields; compare schema2 real/counter-width-bound metadata. Assert inner<=64512 and fullresponse<=65536 with no unexpected wholesale detail loss. Preserve actual bytecounts; do not relaxpayloadcap.",
+  "existing_boundary_test": "Artificialoversize fallback alreadyPASS but does not prove fullest valid observed data fits; this fixture closes that separate gate."
+}

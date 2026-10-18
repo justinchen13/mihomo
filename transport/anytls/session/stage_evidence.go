@@ -58,40 +58,44 @@ type stageSnapshot struct {
 	Metrics                [evidenceStageCount]stageMetric `json:"metrics"`
 }
 type stageSlowEvent struct {
-	StartedAt   string  `json:"started_at"`
-	CompletedAt string  `json:"completed_at"`
-	Session     string  `json:"session"`
-	Stage       string  `json:"stage"`
-	Frame       string  `json:"frame_class"`
-	Bytes       int     `json:"bytes"`
-	DurationMS  float64 `json:"duration_ms"`
-	Failed      bool    `json:"failed"`
+	completed   time.Time // monotonic ordering key; never exported
+	StartedAt   string    `json:"started_at"`
+	CompletedAt string    `json:"completed_at"`
+	Session     string    `json:"session"`
+	Stage       string    `json:"stage"`
+	Frame       string    `json:"frame_class"`
+	Bytes       int       `json:"bytes"`
+	DurationMS  float64   `json:"duration_ms"`
+	Failed      bool      `json:"failed"`
 }
 type stageBatch struct {
-	Schema          int                        `json:"schema"`
-	Kind            string                     `json:"kind"`
-	EvidenceEpoch   string                     `json:"evidence_epoch"`
-	Sequence        uint64                     `json:"sequence"`
-	CaptureStarted  string                     `json:"capture_started"`
-	CaptureEnded    string                     `json:"capture_ended"`
-	Time            string                     `json:"time"`
-	ExportAgeMS     float64                    `json:"export_age_ms"`
-	Captured        time.Time                  `json:"-"`
-	PayloadLimited  bool                       `json:"payload_limited"`
-	OmittedSessions int                        `json:"omitted_sessions"`
-	OmittedSlow     int                        `json:"omitted_slow_events"`
-	StageNames      [evidenceStageCount]string `json:"metric_stage_names"`
-	Admission       string                     `json:"admission_policy"`
-	Live            int64                      `json:"live_authenticated_sessions"`
-	Tracked         int                        `json:"tracked_live_sessions"`
-	Untracked       int64                      `json:"untracked_live_sessions"`
-	Evicted         uint64                     `json:"evicted_sessions_total"`
-	LostCompletions uint64                     `json:"lost_completion_total"`
-	LostBatches     uint64                     `json:"lost_batch_total"`
-	LostSlow        uint64                     `json:"lost_slow_event_total"`
-	LostTerminal    uint64                     `json:"lost_terminal_record_total"`
-	Sessions        []stageSnapshot            `json:"sessions"`
-	SlowEvents      []stageSlowEvent           `json:"slow_events"`
+	Schema             int                                        `json:"schema"`
+	Kind               string                                     `json:"kind"`
+	EvidenceEpoch      string                                     `json:"evidence_epoch"`
+	Sequence           uint64                                     `json:"sequence"`
+	CaptureStarted     string                                     `json:"capture_started"`
+	CaptureEnded       string                                     `json:"capture_ended"`
+	Time               string                                     `json:"time"`
+	ExportAgeMS        float64                                    `json:"export_age_ms"`
+	Captured           time.Time                                  `json:"-"`
+	PayloadLimited     bool                                       `json:"payload_limited"`
+	OmittedSessions    int                                        `json:"omitted_sessions"`
+	OmittedSlow        int                                        `json:"omitted_slow_events"`
+	StageNames         [evidenceStageCount]string                 `json:"metric_stage_names"`
+	Admission          string                                     `json:"admission_policy"`
+	Live               int64                                      `json:"live_authenticated_sessions"`
+	Tracked            int                                        `json:"tracked_live_sessions"`
+	Untracked          int64                                      `json:"untracked_live_sessions"`
+	Evicted            uint64                                     `json:"evicted_sessions_total"`
+	LostCompletions    uint64                                     `json:"lost_completion_total"`
+	LostBatches        uint64                                     `json:"lost_batch_total"`
+	LostSlow           uint64                                     `json:"lost_slow_event_total"`
+	LostTerminal       uint64                                     `json:"lost_terminal_record_total"`
+	Sessions           []stageSnapshot                            `json:"sessions"`
+	SlowEvents         []stageSlowEvent                           `json:"slow_events"`
+	SlowEventPolicy    string                                     `json:"slow_event_policy"`
+	SlowQueueStats     [evidenceStageCount]stageSlowQueueCounters `json:"slow_queue_counters"`
+	OmittedSlowByClass [evidenceStageCount]int                    `json:"omitted_slow_events_by_class"`
 }
 type stageWaiter struct {
 	used    bool
@@ -132,7 +136,7 @@ type stageHub struct {
 	latest          atomic.Pointer[stagePublication]
 	terminal        [evidenceSessions]stageSnapshot
 	terminalN       int
-	slow            chan stageSlowEvent
+	slow            [evidenceStageCount]stageSlowQueue
 	batches         chan stageBatch
 	stop            chan struct{}
 	stopOnce        sync.Once
@@ -166,7 +170,11 @@ func newStageHub() *stageHub {
 	if _, err := rand.Read(nonce[:]); err != nil {
 		return nil
 	}
-	return &stageHub{nonce: hex.EncodeToString(nonce[:]), slow: make(chan stageSlowEvent, evidenceSlowEvents), batches: make(chan stageBatch, 1), stop: make(chan struct{})}
+	h := &stageHub{nonce: hex.EncodeToString(nonce[:]), batches: make(chan stageBatch, 1), stop: make(chan struct{})}
+	for i, capacity := range evidenceSlowClassCapacity {
+		h.slow[i].events = make(chan stageSlowEvent, capacity)
+	}
+	return h
 }
 
 // EnableServerStageEvidence must be called once, before Run, by an authenticated
@@ -384,12 +392,8 @@ func (e *stageHandle) slowEvent(s *stageSlot, stage int, frame string, bytes int
 	if d < evidenceSlowThreshold {
 		return
 	}
-	event := stageSlowEvent{StartedAt: start.UTC().Format(time.RFC3339Nano), CompletedAt: end.UTC().Format(time.RFC3339Nano), Session: s.session, Stage: evidenceStageNames[stage], Frame: frame, Bytes: bytes, DurationMS: float64(d) / float64(time.Millisecond), Failed: err != nil}
-	select {
-	case e.hub.slow <- event:
-	default:
-		e.hub.lostSlow.Add(1)
-	}
+	event := stageSlowEvent{completed: end, StartedAt: start.UTC().Format(time.RFC3339Nano), CompletedAt: end.UTC().Format(time.RFC3339Nano), Session: s.session, Stage: evidenceStageNames[stage], Frame: frame, Bytes: bytes, DurationMS: float64(d) / float64(time.Millisecond), Failed: err != nil}
+	e.hub.enqueueSlow(stage, event)
 }
 func (e *stageHandle) acquire(op *stageWriteOp) {
 	if e == nil || !op.valid {
@@ -554,7 +558,7 @@ func (h *stageHub) collect(_ time.Time) (b stageBatch) {
 		b.Time = b.CaptureEnded
 		b.Captured = ended
 	}()
-	b = stageBatch{Schema: 1, Kind: "diagnostic_not_failure", EvidenceEpoch: h.nonce, Sequence: h.sequence.Add(1), StageNames: evidenceStageNames, Admission: "bounded_rotation_on_auth_not_population_sample", Evicted: h.evicted.Load(), LostCompletions: h.lostCompletions.Load(), LostBatches: h.lostBatches.Load(), LostSlow: h.lostSlow.Load(), LostTerminal: h.lostTerminal.Load()}
+	b = stageBatch{Schema: 2, SlowEventPolicy: evidenceSlowPolicy, Kind: "diagnostic_not_failure", EvidenceEpoch: h.nonce, Sequence: h.sequence.Add(1), StageNames: evidenceStageNames, Admission: "bounded_rotation_on_auth_not_population_sample", Evicted: h.evicted.Load(), LostCompletions: h.lostCompletions.Load(), LostBatches: h.lostBatches.Load(), LostSlow: h.lostSlow.Load(), LostTerminal: h.lostTerminal.Load()}
 	h.mu.Lock()
 	b.Live = h.live.Load()
 	b.Sessions = append(b.Sessions, h.terminal[:h.terminalN]...)
@@ -570,13 +574,6 @@ func (h *stageHub) collect(_ time.Time) (b stageBatch) {
 	}
 	h.mu.Unlock()
 	b.Untracked = b.Live - int64(b.Tracked)
-	for i := 0; i < evidenceSlowEvents; i++ {
-		select {
-		case event := <-h.slow:
-			b.SlowEvents = append(b.SlowEvents, event)
-		default:
-			return b
-		}
-	}
+	h.collectSlow(&b)
 	return b
 }

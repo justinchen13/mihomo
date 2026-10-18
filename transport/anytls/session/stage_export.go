@@ -66,6 +66,14 @@ func (h *stageHub) publish(b stageBatch) {
 		b.PayloadLimited = true
 		b.OmittedSessions = len(b.Sessions)
 		b.OmittedSlow = len(b.SlowEvents)
+		for _, event := range b.SlowEvents {
+			for i, name := range evidenceStageNames {
+				if event.Stage == name {
+					b.OmittedSlowByClass[i]++
+					break
+				}
+			}
+		}
 		b.Sessions, b.SlowEvents = nil, nil
 		raw, err = json.Marshal(b)
 	}
