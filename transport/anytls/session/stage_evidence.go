@@ -231,26 +231,11 @@ func (h *stageHub) close() { h.stopOnce.Do(func() { close(h.stop) }) }
 func (h *stageHub) attach(cookie *string) *stageHandle {
 	h.mu.Lock()
 	defer h.mu.Unlock()
-	// Prefer a free slot. If all are occupied, rotate rather than permanently
-	// describing only the first connections. This is explicitly NOT a population sample.
-	index := -1
-	for i := 0; i < evidenceSessions; i++ {
-		j := (h.next + i) % evidenceSessions
-		s := &h.slots[j]
-		s.mu.Lock()
-		free := !s.live
-		s.mu.Unlock()
-		if free {
-			index = j
-			break
-		}
-	}
-	if index < 0 {
-		index = h.next
-	}
+	// The selected slot stays locked from eligibility check through generation
+	// replacement. A DATA operation cannot become a protected slow writer in
+	// the gap between those actions. Admission never waits for network progress.
+	index, slot := h.admissionSlotLocked()
 	h.next = (index + 1) % evidenceSessions
-	slot := &h.slots[index]
-	slot.mu.Lock()
 	defer slot.mu.Unlock()
 	if slot.live {
 		h.evicted.Add(1)
@@ -558,7 +543,7 @@ func (h *stageHub) collect(_ time.Time) (b stageBatch) {
 		b.Time = b.CaptureEnded
 		b.Captured = ended
 	}()
-	b = stageBatch{Schema: 2, SlowEventPolicy: evidenceSlowPolicy, Kind: "diagnostic_not_failure", EvidenceEpoch: h.nonce, Sequence: h.sequence.Add(1), StageNames: evidenceStageNames, Admission: "bounded_rotation_on_auth_not_population_sample", Evicted: h.evicted.Load(), LostCompletions: h.lostCompletions.Load(), LostBatches: h.lostBatches.Load(), LostSlow: h.lostSlow.Load(), LostTerminal: h.lostTerminal.Load()}
+	b = stageBatch{Schema: 2, SlowEventPolicy: evidenceSlowPolicy, Kind: "diagnostic_not_failure", EvidenceEpoch: h.nonce, Sequence: h.sequence.Add(1), StageNames: evidenceStageNames, Admission: evidenceAdmissionPolicy, Evicted: h.evicted.Load(), LostCompletions: h.lostCompletions.Load(), LostBatches: h.lostBatches.Load(), LostSlow: h.lostSlow.Load(), LostTerminal: h.lostTerminal.Load()}
 	h.mu.Lock()
 	b.Live = h.live.Load()
 	b.Sessions = append(b.Sessions, h.terminal[:h.terminalN]...)

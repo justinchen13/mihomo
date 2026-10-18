@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-10-18T11:32:12.826202+00:00",
+  "ended_utc": "2026-10-18T11:32:30.458218+00:00",
+  "gofmt_started_utc": "2026-10-18T11:32:13.830929+00:00",
+  "gofmt_ended_utc": "2026-10-18T11:32:15.031086+00:00",
+  "owned_cleanup": true,
+  "pure_tests_started_utc": "2026-10-18T11:32:15.935590+00:00",
+  "pure_tests_ended_utc": "2026-10-18T11:32:30.457847+00:00",
+  "pure_tests_exit": 0,
+  "after_sha256": {
+    "transport/anytls/session/stage_evidence.go": "198fb02cec6473e0c38892ec8e4798219fb7fe08422e8471c96d8bc317a7a6dc",
+    "transport/anytls/session/stage_admission.go": "179dcc0cee29e1ae89ae389c0b13d7332b1abeec3fd4e424fb0848ca10e0f44e",
+    "transport/anytls/session/stage_admission_causal_test.go": "2bb591bf858b4a4124d7bb988ad46b39f121bfe737405f1521884c8c68e69179",
+    "transport/anytls/session/stage_admission_test.go": "3047c143364c4578a662d50e7e60cc0e5bec203a2c76f93b33089354b3fb3b52",
+    "transport/anytls/session/stage_admission_bench_linux_test.go": "dfec12633d5530833d75d8f4c56af9e5306695ed679aa17f29acdcd48a89014d"
+  },
+  "consumer_sha256": {
+    "stage.py": "6f90b9f114aa7aaae32dc23670cf7276dc4f53773be8c59f1d2131b4de309df2",
+    "test_stage_admission.py": "e04b295c17a9c8e1867a6f879bc24df2666ec4c3d3553e8e354b74a0e0091f6f"
+  },
+  "scope": "Formatting and pure consumer compatibility only",
+  "consumer_tests": 16,
+  "resource_limits": {
+    "cpu_quota_percent": 10,
+    "memory_bytes": 100663296,
+    "swap_bytes": 0
+  },
+  "producer_go_tests": "NOT_RUN",
+  "production_changed": false,
+  "network_fixture": false
+}
