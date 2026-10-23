@@ -3,6 +3,7 @@ package session
 import (
 	"sort"
 	"sync/atomic"
+	"time"
 )
 
 const evidenceSlowPolicy = "fixed_stage_budgets_v1"
@@ -48,6 +49,8 @@ func (h *stageHub) collectSlow(batch *stageBatch) {
 			select {
 			case event := <-queue.events:
 				queue.dequeued.Add(1)
+				event.StartedAt = event.started.UTC().Format(time.RFC3339Nano)
+				event.CompletedAt = event.completed.UTC().Format(time.RFC3339Nano)
 				batch.SlowEvents = append(batch.SlowEvents, event)
 			default:
 				i = capacity

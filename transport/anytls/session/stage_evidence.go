@@ -58,6 +58,7 @@ type stageSnapshot struct {
 	Metrics                [evidenceStageCount]stageMetric `json:"metrics"`
 }
 type stageSlowEvent struct {
+	started     time.Time // source operation time; formatted only after dequeue
 	completed   time.Time // monotonic ordering key; never exported
 	StartedAt   string    `json:"started_at"`
 	CompletedAt string    `json:"completed_at"`
@@ -377,7 +378,11 @@ func (e *stageHandle) slowEvent(s *stageSlot, stage int, frame string, bytes int
 	if d < evidenceSlowThreshold {
 		return
 	}
-	event := stageSlowEvent{completed: end, StartedAt: start.UTC().Format(time.RFC3339Nano), CompletedAt: end.UTC().Format(time.RFC3339Nano), Session: s.session, Stage: evidenceStageNames[stage], Frame: frame, Bytes: bytes, DurationMS: float64(d) / float64(time.Millisecond), Failed: err != nil}
+	// Full queues discard many ordinary idle/slow observations. Keep the source
+	// instants without formatting strings on the proxy operation path. The bounded
+	// collector formats only events actually removed from the queue, outside the
+	// registry/session locks. Exported times remain operation times, not poll times.
+	event := stageSlowEvent{started: start, completed: end, Session: s.session, Stage: evidenceStageNames[stage], Frame: frame, Bytes: bytes, DurationMS: float64(d) / float64(time.Millisecond), Failed: err != nil}
 	e.hub.enqueueSlow(stage, event)
 }
 func (e *stageHandle) acquire(op *stageWriteOp) {
