@@ -1,0 +1,160 @@
+{
+  "schema": 1,
+  "round": "R-20261023-04",
+  "status": "REVISED_BEFORE_FIRST_RUN_VALIDATION_PENDING",
+  "purpose": "Establish whether a finite bulk burst adds fixed-ID small-response waiting on its shared outer beyond the common bottleneck seen on the other outer. Baseline mechanism only.",
+  "controls": {
+    "runtime_source": "00e79a0a478d6cc340ca039bd4f6a021dc3f03de",
+    "server_binary_sha256": "09f63bde838eb9391b7dcf15e8568368b98510dd52662b050420f3c391cfe85c",
+    "native_client_module_same_runtime": true,
+    "fixture_binary_sha256": null,
+    "CC": "bbr",
+    "namespace_lowat": 4294967295,
+    "origin_outbound_policy": "same baseline namespace defaults; read back, no test-only lowat variation",
+    "tls": "1.3; real CA verification; native AnyTLS auth and negotiated fixed padding"
+  },
+  "workload": {
+    "outers": 2,
+    "streams": 33,
+    "small_ids": [
+      0,
+      31
+    ],
+    "small_per_outer": 16,
+    "bulk_id": 32,
+    "bulk_bytes": 6291456,
+    "small_body_bytes": 4096,
+    "application_response_bytes": 6422528,
+    "small_due_formula_seconds": "1+0.5*(id//2)",
+    "outer_formula": "id%2; bulk uses fixed bulk_outer",
+    "deadline_seconds": 45,
+    "readers_prearmed": 33,
+    "writers_prearmed": 33,
+    "setup_workers": 8,
+    "measured_application_mutex_or_slot": false,
+    "origin_write_chunk_bytes": 32768,
+    "origin_max_call_records_per_id": 256,
+    "reference_each_outer_bytes": 4096,
+    "idle_reference_count": 20,
+    "reference_scope": "preGO health, not maximum throughput",
+    "upload_bytes": 0
+  },
+  "run_order_draft": [
+    {
+      "replicate": 0,
+      "bulk_outer": 0,
+      "phase": "preGO healthy references then restricted burst"
+    },
+    {
+      "replicate": 1,
+      "bulk_outer": 1,
+      "phase": "fresh resources/connections; same healthy references then restricted burst"
+    }
+  ],
+  "new_harness_pending": true,
+  "time": {
+    "clock": "CLOCK_MONOTONIC",
+    "time_namespace_equal_required": true,
+    "UTC": "display only",
+    "quiet_seconds": 1.2,
+    "quiet_scope": "all heavy readiness finished; before/after raw cpu.stat/tasks identities; no adaptive waiting",
+    "controller_go_vs_client_base": "retain both; client observed marker then establishes actual common worker base; planned timer offsets use that base",
+    "request_write_return_may_follow_receipt": true,
+    "origin_write_return_not_client_receipt": true,
+    "first_actual_write_begin_delay_per_role_p95_ms_max": 20,
+    "first_actual_write_begin_delay_per_role_max_ms_max": 100,
+    "bulk_actual_write_begin_delay_ms_max": 20
+  },
+  "resource_gates": {
+    "cpu_max": "400000 1000000",
+    "memory_max_bytes": 536870912,
+    "swap_max_bytes": 0,
+    "first_capture_wall_range_seconds": [
+      1.0,
+      1.05
+    ],
+    "first_and_whole_throttled_wall_max": 0.1,
+    "memory_events_high_max_oom_oomkill_delta": 0,
+    "scheduler_per_role_p95_ms": 20,
+    "scheduler_per_role_max_ms": 100,
+    "start_disk_min_bytes": 1073741824,
+    "run_disk_min_bytes": 629145600,
+    "artifact_watch_check_seconds": 0.01,
+    "unknown_not_zero": true,
+    "first_failure_stops_no_retry": true
+  },
+  "capacity": {
+    "producer_registry_capacity": 32,
+    "actual_sessions_needed": 2,
+    "waiter_detail_capacity": 32,
+    "max_measured_writers_loaded_outer": 17,
+    "max_measured_writers_other_outer": 16,
+    "consumer_or_API_caps_changed": false,
+    "stage_event_overflow_still_possible": true,
+    "readiness_API_tcp_row_caps": "33 origin+33 proxy endpoints+4 external outer endpoints fit original512; actual filter/readback count still verified, never silently raised"
+  },
+  "network_draft": {
+    "controller": "/root/proxy-source-lab/loop-20261018/caddy/tcp-cc-comparison-v2/controller.py",
+    "profile": "main only",
+    "forward_rate_bits_per_second": 1600000,
+    "forward_rate_queue_packets": 16,
+    "forward_delay_ms": 75,
+    "propagation_queue_packets": 203,
+    "reverse_delay_ms": 75,
+    "reverse_queue_packets": 256,
+    "mtu": 1500,
+    "offloads": "original readback disabled",
+    "idle_echo_median_ms": [
+      140,
+      180
+    ],
+    "natural_equivalence": "Does not reproduce actual WAN topology/loss/BBR mode; validates only declared finite-queue mechanism. Stage/TCP evidence required, nonzero rwnd and ACK progress within target interval.",
+    "normal_fast_model": "NOT_QUALIFIED_NOT_IN_SCOPE"
+  },
+  "budgets": {
+    "JSON_each_file_bytes": 1048576,
+    "summary_bytes": 262144,
+    "raw_sources": "all33 client slots,33 origin ledger entries, all16pair results; preserve missing/partial/errors",
+    "client_setup_seconds": 35,
+    "client_wait_GO_seconds": 40,
+    "client_workload_seconds": 45,
+    "client_post_result_hold_seconds": 8,
+    "origin_total_lifetime_seconds": 150,
+    "future_unit_proposed_seconds": 160,
+    "future_outer_proposed_seconds": 180,
+    "future_runner_bounded_raw_total_bytes": 16777216,
+    "future_runner_raw_each_file_bytes": 4194304,
+    "future_stage_poll": "same10s/64KiB source cadence and budgets; do not increase for desired evidence"
+  },
+  "interpretation": {
+    "protocol_qualified_is_not_causal_pass": true,
+    "old_A5_F1_HOLD_unchanged": true,
+    "old_F2_F3_failure_unchanged": true,
+    "claim_requires_both_bulk_placements": "positive fixed-pair after-ready loaded-minus-independent contrast AND simultaneous ready small response, actual native TLSwrite pending, target writer-waiter evidence, identity-certain inside TCP ACK/rwnd/queue observations",
+    "event_evidence": "identity-certain TCP capture wholly inside selected origin-ready to client-verified interval plus matching session TLS/owner evidence; no arbitrary per-request operation mapping",
+    "strong_falsifiers": [
+      "paired difference absent",
+      "request scheduler or origin not ready",
+      "reader not armed or scheduling failure",
+      "only zero advertised window",
+      "only post-completion TCP",
+      "queue empty or missing",
+      "raw counter/identity barrier",
+      "stage event loss prevents attribution"
+    ],
+    "future_backpressure_candidate": "Only after matching declared causal evidence; may shift delay into writer locks and cannot add WAN capacity. No lowat/CC/frame/scheduler change implemented.",
+    "primary_pair_metric": "loaded_minus_independent_after_ready_ms",
+    "effective_sendbuffer": "Read effective socket sndbuf/sk_wmem queue and TLS begin/end;6MiB load is a design to exceed buffering, not proof from tcp_wmem alone."
+  },
+  "validation_status": {
+    "Python_AST": "NOT_RUN",
+    "Go_format": "NOT_RUN",
+    "Python_pure_tests": "NOT_RUN",
+    "Go_normal": "NOT_RUN",
+    "Go_race": "NOT_RUN",
+    "client_build": "NOT_RUN",
+    "native_runtime": "NOT_RUN",
+    "network": "NOT_RUN",
+    "production_mutation": false
+  }
+}

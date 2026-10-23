@@ -1,0 +1,57 @@
+{
+  "status": "OFFLINE_AND_TWO_NATIVE_NETWORK_TRIALS_COMPLETED",
+  "round_id": "R-20261023-04",
+  "utc": "2026-10-23T16:47:22.409537+00:00",
+  "baseline_runtime": "00e79a0a478d6cc340ca039bd4f6a021dc3f03de",
+  "baseline_binary_sha256": "09f63bde838eb9391b7dcf15e8568368b98510dd52662b050420f3c391cfe85c",
+  "client_binary_sha256": "a352dec234add87184ed83fc5d658548c07cd255ecfdca754807ce1fdccc1a4b",
+  "python_pure": {
+    "tests": 19,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "Go_normal_tests": 9,
+  "Go_race_tests": 9,
+  "Go_skips": 0,
+  "network": {
+    "placements": [
+      0,
+      1
+    ],
+    "status": "QUALIFIED_PROTOCOL_LATENCY_ONLY",
+    "small_afterready_extra_median_ms": [
+      4173.4532465,
+      4043.212975
+    ],
+    "positive_pairs_each": [
+      16,
+      16
+    ],
+    "client_application_bytes_each": 6422528
+  },
+  "full_event_attribution": "INCOMPLETE_NOT_ACCEPTED_FOR_PRODUCTION_PROMOTION",
+  "production_rootcause": "UNKNOWN",
+  "production_modified": false,
+  "first_pure_attempt_timeout": "Preserved; fixed33SHA boundedmemoization revision; same19cases/resources20sdeadline.",
+  "initial_snapshot_only_audit": "Preserved UNKNOWN, completed real wait interval branch is permitted by frozen plan.",
+  "source_checksums": {
+    "test_contract.py": "ad86052f825368681c16d38d8bae5822fd7256bf8496b4abdc74ccf6d5f48027",
+    "origin.go": "55a3062bc1cd70d38e74f92d5036d203eae49cd905350ee28fa760e13d3f50c7",
+    "quiet.py": "a4a9574e6b66bfb123f854919b32bbf256fb0d3fe72705d7cbd3c93d99afea68",
+    "evidence.go": "940a8932c84eb0cbcddbcf408b1c7ab795eedb95a66d0489e40d19efd245b861",
+    "source-dependencies.json": "d99d322766e4acf020fa4bcb05a20a79a27fca297723fb27dbf5063e542d05ed",
+    "analyse.py": "421340f1a574c374cf52a12c66a03d9284369fda62f10ef76af8a26b4ee43d76",
+    "fixture_test.go": "04875e261b8efde2cd58ec60557b1630f5dca82dfbd3e5cd1f7aabbd7e2bbe16",
+    "contract.py": "95d932bab810c5bc9964824dc02353d3102c1e7588437e2572ac803598f7294c",
+    "transport.go": "1101e8a5014efbe62f169d2e5a30455cf1c7b501bebb40b6bcfa7f40310a7ab7",
+    "setup.go": "6ec96543d37d7876c5398c6214f542cb406bcdacac6ecd5130e7edae6c3665ea",
+    "test_quiet.py": "a16ae4356e3454a8defb32f58889b5ecf84b731ba4647578d1a51e9c2cdbfd80",
+    "test_analyse_entry.py": "db19b186671cc906cc61c8077b1c0d880cd8060120a49f64bede4fa5531505f3",
+    "plan.frozen.json": "45a72d5837c742e7eb04bff14ef3e01805b99b4b79e71a6e3e40677bee935079",
+    "client.go": "67e967a70ea61b3ffde19541b6f376d87783878e6183aa85aadbe1d7b4ad31d6",
+    "protocol.go": "f07e2aa74208710721136d8a78f6f56e59b1761923456a2e7ef6a32bc03029cb",
+    "local/run_mechanism.py": "e6324a9bb87586d0e6244ad71c5d68efec327b40f49be4dbd8f4368049070844",
+    "local/audit_mechanism.py": "eca24173113b69d40da925da2093525f13df4d339aa0b4044b03fdc850991169"
+  }
+}

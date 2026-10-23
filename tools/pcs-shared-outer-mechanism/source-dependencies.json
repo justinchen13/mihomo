@@ -1,0 +1,122 @@
+{
+  "scope": "READ_ONLY_SOURCE_AND_FROZEN_REPORTS; no runtime or live logs read",
+  "inputs": [
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f2/validation-1/format/client.go",
+      "sha256": "6ea71be94fb4687959d7293c2519abf34c8d02bf3e16014d67076ea2e6adb388",
+      "bytes": 4135
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f2/validation-1/format/concurrent.go",
+      "sha256": "2976ba3cd523a8edd12b3c99ffcfaf648575428ab2925c31eb21f32c540564cd",
+      "bytes": 12818
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f2/validation-1/format/origin.go",
+      "sha256": "3d9abe3b6e65918f0706a7eaeca89839e4b008d3ce13c672a87a1d8ab0586545",
+      "bytes": 3493
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f2/validation-1/format/evidence.go",
+      "sha256": "0d492d712176ccdc8f0ef58002488c7fe99ecfa44cebea67121b1adfd3e8b702",
+      "bytes": 2689
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f2/validation-1/format/evidence_test.go",
+      "sha256": "af3ee4ee0db20be36e586a7c4d381b68c18fdd805eaec5f43b06e6932ef0a7a3",
+      "bytes": 2431
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f3/run.py",
+      "sha256": "687a02f660caf293fd3b12c22ed6e426c5c2a6af0bb18c8fc088ef134f5458e5",
+      "bytes": 40644
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f3/execution-manifest.json",
+      "sha256": "57b39b5b011e24153a398670074a84ee062b73fa47ae653abd377af7d6fc5f60",
+      "bytes": 35051
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/caddy/tcp-cc-comparison-v2/controller.py",
+      "sha256": "6ce7d570f9a7835b2957846c518d61021bbd04e3a0c02dba2398ceec0f9753bf",
+      "bytes": 56408
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/caddy/tcp-cc-comparison-v2/environment.py",
+      "sha256": "231be9a2bb3a2b5d4f83b657393fab755ebbfc67badb0a5a461633904913c7f2",
+      "bytes": 3484
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/caddy/tcp-cc-comparison-v2/network-plan.json",
+      "sha256": "59cc65ec6763184b6426d42cf81a16a134843af9d99a7c5c95a4b4fa598143a6",
+      "bytes": 31736
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f3/owned_socket.py",
+      "sha256": "88700d8879394f28b72038fd6b31247883a85836b480b0f899bf866047a3bf33",
+      "bytes": 6069
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f3/lowat_artifact_watch.py",
+      "sha256": "a19d687492df4123fc1837c4af34e82095ab9cae93272aa780ff2d8b7ffe5508",
+      "bytes": 7874
+    },
+    {
+      "path": "/root/proxy-source-lab/loop-20261018/anytls-concurrent-f3/lowat_artifact_guard.py",
+      "sha256": "ceae5eb08db5c588665c033c30f6945855aaae8d501474b8e0a41f7ebaadc246",
+      "bytes": 5089
+    },
+    {
+      "path": "/root/proxy-source-lab/anytls-audit/mihomo-stage-admission-20261018/go.mod",
+      "sha256": "23e40f9e1197e44b1709063e5c44c3f8ef7ef38c534aaf8b8094e391d47409db",
+      "bytes": 5646
+    },
+    {
+      "path": "/root/proxy-source-lab/anytls-audit/mihomo-stage-admission-20261018/go.sum",
+      "sha256": "847577650191553e901df6cd82cfec82d3411351cf3e5d5721720f4519fee374",
+      "bytes": 25974
+    },
+    {
+      "path": "/root/proxy-source-lab/anytls-audit/mihomo-stage-admission-20261018/transport/anytls/session/session.go",
+      "sha256": "eb9b49b7bbd7771c0d0bf2b3fefec32a2c85514a76ebee6004863aa2d5eba756",
+      "bytes": 12995
+    },
+    {
+      "path": "/root/proxy-source-lab/anytls-audit/mihomo-stage-admission-20261018/transport/anytls/session/stream.go",
+      "sha256": "fa1be306e247469a1a015052fa7b7e07c5642e73875a667a42291255a3f48ecf",
+      "bytes": 3618
+    },
+    {
+      "path": "/root/proxy-source-lab/anytls-audit/mihomo-stage-admission-20261018/transport/anytls/session/stage_evidence.go",
+      "sha256": "198fb02cec6473e0c38892ec8e4798219fb7fe08422e8471c96d8bc317a7a6dc",
+      "bytes": 17326
+    },
+    {
+      "path": "/root/proxy-source-lab/anytls-audit/mihomo-stage-admission-20261018/transport/anytls/padding/padding.go",
+      "sha256": "cfb5e9321cf33de255fb81e2f85918a49eb3bf5117ff1059430b60a71ce273e0",
+      "bytes": 1929
+    },
+    {
+      "path": "/root/proxy-source-lab/round-20261023-03/anytls-causal-design.safe.json",
+      "sha256": "fca2963e52231aa8efd2f941be40f2cd709ecd942fa8b344b6866ed69bb9f377",
+      "bytes": 21450
+    },
+    {
+      "path": "/root/proxy-source-lab/round-20261023-02/anytls-stall-causal.safe.json",
+      "sha256": "40a30ded4d20fb45b7633433607c84945f20c64e87f35da080bd7b4ada413fc9",
+      "bytes": 76048
+    }
+  ],
+  "expected_baseline_from_F3_manifest": {
+    "server_binary": "/root/proxy-source-lab/loop-20261018/anytls-stage-s2/formal-artifact-import/run-1/verified/mihomo-s2-experimental",
+    "server_binary_sha256": "09f63bde838eb9391b7dcf15e8568368b98510dd52662b050420f3c391cfe85c",
+    "stage_consumer": "/opt/pcs-anytls-monitor/stage.py"
+  },
+  "server_binary_rehashed_this_turn": false,
+  "module_head_readonly": "bfafaef228ec71d792c65eaacba5aa0ccd943ada",
+  "baseline_runtime_commit": "00e79a0a478d6cc340ca039bd4f6a021dc3f03de",
+  "git_readonly_diff_against_runtime": "No changes reported in go.mod/go.sum/transport/anytls at reviewed module",
+  "controller_reuse": "Topology/owned cleanup and private Unix guard only; no F3 CC arms or performance adjudicator copied into this experiment",
+  "quiet_reuse": "F3 functions with explicit controller argument, same fixed1.2s and comparable task CPU rules; bounded exclusive output writer",
+  "existing_service_qualification_not_new_workload_qualification": true
+}
