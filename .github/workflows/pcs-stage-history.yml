@@ -1,13 +1,7 @@
 name: Validate bounded AnyTLS publication history
 
 on:
-  push:
-    branches: [pcs/stage-history-20261023]
-    paths:
-      - 'transport/anytls/session/**'
-      - 'hub/route/anytls_stage*'
-      - 'tools/pcs-stage-history/**'
-      - '.github/workflows/pcs-stage-history.yml'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,7 +12,7 @@ concurrency:
 
 jobs:
   validate-build:
-    if: github.repository == 'justinchen13/mihomo' && github.ref == 'refs/heads/pcs/stage-history-20261023'
+    if: github.repository == 'justinchen13/mihomo'
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
@@ -33,26 +27,14 @@ jobs:
           ref: 00e79a0a478d6cc340ca039bd4f6a021dc3f03de
           path: src/mihomo-base
           persist-credentials: false
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          repository: justinchen13/PCS
-          ref: fa11a3aa2c4059f8298a962ab85e702e35fe6a41
-          path: src/pcs-consumer
-          persist-credentials: false
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          repository: justinchen13/PCS
-          ref: 8c1816e571b9c9dcadce158f799fef0812794c45
-          path: src/pcs-base
-          persist-credentials: false
       - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
         with:
           go-version: '1.25.6'
           architecture: x64
           check-latest: false
           cache: false
-      - name: Exact-source normal/race, Unix cursor, consumer cost and tagged builds
-        run: python3 src/mihomo/tools/pcs-stage-history/validate.py
+      - name: Source-only normal/race and Unix cursor contract
+        run: python3 src/mihomo/tools/pcs-stage-history/source_validate.py
       - name: Preserve every outcome; this artifact is not release approval
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9

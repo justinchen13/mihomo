@@ -109,8 +109,8 @@ def publisher_cost(label,cwd):
 def main():
  os.umask(0o077);OUT.mkdir(parents=True,exist_ok=False);RECORD['started_utc']=utc();save()
  try:
-  if os.environ.get('GITHUB_REPOSITORY')!='justinchen13/mihomo' or os.environ.get('GITHUB_REF')!='refs/heads/pcs/stage-history-20261023':raise RuntimeError('repository/ref guard')
-  head=git(CANDIDATE,'rev-parse','HEAD');RECORD['workflow_commit']=head
+  if os.environ.get('GITHUB_REPOSITORY')!='justinchen13/PCS' or os.environ.get('GITHUB_REF')!='refs/heads/pcs/anytls-stage-history-20261023':raise RuntimeError('private orchestrator repository/ref guard')
+  head=git(CANDIDATE,'rev-parse','HEAD');RECORD['workflow_commit']=head;RECORD['orchestrator_workflow_commit']=os.environ.get('GITHUB_SHA')
   if git(BASELINE,'rev-parse','HEAD')!=BASE or git(PCS,'rev-parse','HEAD')!=CONSUMER or git(PCSBASE,'rev-parse','HEAD')!=PCSBASE_SOURCE:raise RuntimeError('checkout identity')
   subprocess.run(['git','merge-base','--is-ancestor',SOURCE,head],cwd=CANDIDATE,check=True,timeout=20)
   after=git(CANDIDATE,'diff','--name-only',SOURCE,head).splitlines()
