@@ -1,0 +1,35 @@
+{
+  "status": "STATIC_PREPARED_NOT_EXECUTED",
+  "created_utc": "2026-10-23T12:49:46.992368+00:00",
+  "python_ast": "PASS",
+  "shell_syntax": "PASS",
+  "pure_tests_prepared": 8,
+  "tests": "NOT_RUN",
+  "builds": "NOT_RUN",
+  "runtime": "NOT_RUN",
+  "production": "UNCHANGED",
+  "files": {
+    "README.md": "deda9af00343d667157d4ba2049746772343a8af458854da606341391011fbe2",
+    "UPSTREAM-REUSE.json": "8ca03c8f0c62a6ce5992b582a765f1109b38c842967f979f004cc1c3d96ccdab",
+    "adjudicate.py": "f8ffb43f984543a888c2150dcd09d62cb54aa137227551a5cddf7bf3c31a2874",
+    "build-client.sh": "8c5e3ec13d180e8be68072f164281a532d7f54b54f777a5921ec8df287fcf31b",
+    "client-v2.go": "391580fd40779250cbc0e296d50ad0a00c3f00c67f243ddcc349f1d1b0fc9acb",
+    "collector-wrapper.py": "f8ad3aca0023760f53b0556988e198b23fadbebfc33392bc3027509c2147b3ad",
+    "input_contract.py": "5c5a3f38e2a87f98693b30fde0297ecb19d431e7e6a7d2c9cf4c897845369839",
+    "inputs.example.json": "1aed96243afea561dacc9173e5bb3dd99456b4ed9779fcb78d22629fb3768df1",
+    "launch.sh": "01759d5864f66e6597722dc33427808c7048291b5939e65f7df10f0d99452e1d",
+    "numeric_core.py": "69e9da6239de50b7bb9c8cd3307dc4c5cc3f3c95d804d6e929e8f8c5af052554",
+    "prepare.py": "8d4cd19c18d64b94269b5f0364f46cc67941046d1f054c29f726b6008c3796bb",
+    "run.py": "9e7a11acb7f72ee11fc597d6cf6e9e8ea7635d2d8cc09f0d2db2acbf0bf96205",
+    "runtime_protocol.py": "8140bc3940b1d539f2db6c73d7f320be7e3b37161a5da78b046c51c1cfcc6322",
+    "runtime_security.py": "cf79928c7aadcdef6a126096a5899d3d7853f5a7d998e98fbcc6ce52629ba427",
+    "test_contract.py": "9583ac44a50ad5c1e1a0dde86b0f9108e8ea1e6537717d0662013b84cd79a29b"
+  },
+  "limitations": [
+    "Consumer callback compatibility and scalar latest-publication timing wrapper need explicit current-input review; multiple publications per call require narrow adapter change.",
+    "Paced offeredload throughput, not saturation capacity.",
+    "Fresh CI systemd/Docker cgroup qualification and all actual results remain outstanding.",
+    "No production pins, source elsewhere, workflow or commits changed."
+  ],
+  "legacy_standalone_protocol_launcher": "REMOVED; only imported actual protocol probe retained"
+}

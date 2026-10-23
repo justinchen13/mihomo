@@ -1,0 +1,46 @@
+{
+  "status": "STATIC_REVISED_NOT_TESTED",
+  "created_utc": "2026-10-23T13:22:32.114189+00:00",
+  "request": "C1/C2/C3/C4 review blockers; owned directory only",
+  "ast": "PASS; no import or test execution",
+  "pure_test_counts": {
+    "test_contract.py": 8,
+    "test_history_cleanup.py": 25
+  },
+  "pure_command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tools/pcs-stage-history-cost -p 'test_*.py' -v",
+  "numeric_core_unchanged": true,
+  "original_test_file_unchanged": true,
+  "changes": [
+    "bounded per-request/probe, per-append and per-after_write records; no scalar overwrite",
+    "per-delivery history capture/metadata/current-gauge eligibility and maximum-latest freshness projection; raw ages unchanged",
+    "every request/row/ACK and reported totals/backlog must agree; unknown HOLD",
+    "owned helper description/PID startticks/originalcgroup tracking and post-stop/kill readback; aggregate empty/inactive and volume checks before cleanup pass"
+  ],
+  "limits": [
+    "No pure tests, builds, runtime traffic, performance runs or production actions executed.",
+    "History API functional/fault tests remain separate; unexercised catch-up is reported, not inferred.",
+    "Wrapper callbacks assume the reviewed synchronous StageReader/StageLog implementation and <=2 calls per tick; extra/unknown calls fail qualification.",
+    "Kernel/process shutdown after external SIGKILL cannot be guaranteed by Python finally; unverified cleanup is HOLD and CI runner must be discarded.",
+    "Capped33s offered-load scope, original98%/105% median gates and all pair records unchanged."
+  ],
+  "files": {
+    "README.md": "17c48d4c47670142459ce8a86010d263496a3d99f0395587bc94e0cd4e0ca53b",
+    "UPSTREAM-REUSE.json": "8ca03c8f0c62a6ce5992b582a765f1109b38c842967f979f004cc1c3d96ccdab",
+    "adjudicate.py": "2c2bfdf829febd1bf66b015332085ce6ec1398c9c2ebd9b6c79fed735cb89476",
+    "build-client.sh": "8c5e3ec13d180e8be68072f164281a532d7f54b54f777a5921ec8df287fcf31b",
+    "cleanup_contract.py": "94ccd6cc77de39b3fa4bd6f01cd3c4a009111935a0ab24df7fe8d852a9be3d0d",
+    "client-v2.go": "391580fd40779250cbc0e296d50ad0a00c3f00c67f243ddcc349f1d1b0fc9acb",
+    "collector-wrapper.py": "e210fd20d543344872040b3f62779511c8e779f0a217a77416ed39a2f3b3e1f7",
+    "history_contract.py": "c172277ec34fef17b0a206625c3ebc8131acdf072324d2ff85f53483133f41e1",
+    "input_contract.py": "b1b4bf168885aa9f11ecff96ba2cbae6c4063a6e1bd387bd04b263bb7d818b93",
+    "inputs.example.json": "1aed96243afea561dacc9173e5bb3dd99456b4ed9779fcb78d22629fb3768df1",
+    "launch.sh": "01759d5864f66e6597722dc33427808c7048291b5939e65f7df10f0d99452e1d",
+    "numeric_core.py": "69e9da6239de50b7bb9c8cd3307dc4c5cc3f3c95d804d6e929e8f8c5af052554",
+    "prepare.py": "8d4cd19c18d64b94269b5f0364f46cc67941046d1f054c29f726b6008c3796bb",
+    "run.py": "30c1343f7eda3e8ad0e5a0b15b695120686ae84f721aba0bf67b245d9d774e55",
+    "runtime_protocol.py": "8140bc3940b1d539f2db6c73d7f320be7e3b37161a5da78b046c51c1cfcc6322",
+    "runtime_security.py": "cf79928c7aadcdef6a126096a5899d3d7853f5a7d998e98fbcc6ce52629ba427",
+    "test_contract.py": "9583ac44a50ad5c1e1a0dde86b0f9108e8ea1e6537717d0662013b84cd79a29b",
+    "test_history_cleanup.py": "2ae10b24d67a8342ed1d944acd7842a722b25f0c9f30fae219932f7f2d210330"
+  }
+}

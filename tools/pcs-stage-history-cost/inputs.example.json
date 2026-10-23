@@ -1,0 +1,25 @@
+{
+  "workspace": "/home/runner/work/REPO/REPO",
+  "runtime_image_id": "sha256:REVIEWED_LOCAL_IMAGE_ID",
+  "client_binary": "/home/runner/work/REPO/REPO/cost-inputs/client",
+  "client_provenance": "/home/runner/work/REPO/REPO/cost-inputs/client-provenance.json",
+  "output_root": "/home/runner/work/REPO/REPO/cost-results/attempt-1",
+  "baseline": {
+    "binary": "/home/runner/work/REPO/REPO/cost-inputs/baseline",
+    "binary_sha256": "REVIEWED_SHA256",
+    "source_commit": "REVIEWED_40_HEX_COMMIT",
+    "provenance": "/home/runner/work/REPO/REPO/cost-inputs/baseline-provenance.json",
+    "consumer_dir": "/home/runner/work/REPO/REPO/cost-inputs/consumer-old",
+    "inner_schema": 2,
+    "diagnostic_capability": "existing_latest_stage"
+  },
+  "candidate": {
+    "binary": "/home/runner/work/REPO/REPO/cost-inputs/candidate",
+    "binary_sha256": "REVIEWED_SHA256",
+    "source_commit": "REVIEWED_40_HEX_COMMIT",
+    "provenance": "/home/runner/work/REPO/REPO/cost-inputs/candidate-provenance.json",
+    "consumer_dir": "/home/runner/work/REPO/REPO/cost-inputs/consumer-new",
+    "inner_schema": 2,
+    "diagnostic_capability": "history_with_backward_compatible_latest"
+  }
+}

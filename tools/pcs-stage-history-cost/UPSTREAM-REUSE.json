@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-23T12:44:13.599814+00:00",
+  "sources": {
+    "run.py": {
+      "source_path": "/root/proxy-source-lab/loop-20261018/anytls-stage-s1/cost-preparation-v2/run-cost-s1.py",
+      "sha256": "7d00ae42480cc99385eee01840416f71352de559838e96961c1eafcdc17d46b6"
+    },
+    "adjudicate.py": {
+      "source_path": "/root/proxy-source-lab/loop-20261018/anytls-stage-s1/cost-preparation-v2/adjudicate-s1.py",
+      "sha256": "d0eb6739e1aeb7298f5b189d6a8dea93a50ef6bf6d54d1ed528120e0fcf71d40"
+    },
+    "collector-wrapper.py": {
+      "source_path": "/root/proxy-source-lab/loop-20261018/anytls-stage-s1/cost-preparation-v2/collector-wrapper-s1.py",
+      "sha256": "f8ad3aca0023760f53b0556988e198b23fadbebfc33392bc3027509c2147b3ad"
+    },
+    "numeric_core.py": {
+      "source_path": "/root/proxy-source-lab/loop-20261018/anytls-stage-acceptance/adjudicate-v3.py",
+      "sha256": "69e9da6239de50b7bb9c8cd3307dc4c5cc3f3c95d804d6e929e8f8c5af052554"
+    },
+    "client-v2.go": {
+      "source_path": "/root/proxy-source-lab/loop-20261018/anytls-stage-acceptance/client-v2.go",
+      "sha256": "391580fd40779250cbc0e296d50ad0a00c3f00c67f243ddcc349f1d1b0fc9acb"
+    },
+    "runtime_security.py": {
+      "source_path": "/root/proxy-source-lab/loop-20261018/anytls-stage-acceptance/runtime_security.py",
+      "sha256": "cf79928c7aadcdef6a126096a5899d3d7853f5a7d998e98fbcc6ce52629ba427"
+    },
+    "runtime_protocol.py": {
+      "source_path": "/root/proxy-source-lab/loop-20261018/anytls-stage-acceptance/runtime_protocol.py",
+      "sha256": "682fb93d95a02212f36adc07086257619d71e1b82b36613d44680f42d536a53d"
+    }
+  },
+  "execution": "NONE; inherited behavior is not current validation"
+}
