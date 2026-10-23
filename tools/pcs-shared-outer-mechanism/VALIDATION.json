@@ -38,7 +38,7 @@
   "source_checksums": {
     "test_contract.py": "ad86052f825368681c16d38d8bae5822fd7256bf8496b4abdc74ccf6d5f48027",
     "origin.go": "55a3062bc1cd70d38e74f92d5036d203eae49cd905350ee28fa760e13d3f50c7",
-    "quiet.py": "a4a9574e6b66bfb123f854919b32bbf256fb0d3fe72705d7cbd3c93d99afea68",
+    "quiet.py": "a457ebd3fe25693e13d318e1c8855893b44d7c9364e8229c6c95676001ab0ca2",
     "evidence.go": "940a8932c84eb0cbcddbcf408b1c7ab795eedb95a66d0489e40d19efd245b861",
     "source-dependencies.json": "d99d322766e4acf020fa4bcb05a20a79a27fca297723fb27dbf5063e542d05ed",
     "analyse.py": "421340f1a574c374cf52a12c66a03d9284369fda62f10ef76af8a26b4ee43d76",
@@ -53,5 +53,11 @@
     "protocol.go": "f07e2aa74208710721136d8a78f6f56e59b1761923456a2e7ef6a32bc03029cb",
     "local/run_mechanism.py": "e6324a9bb87586d0e6244ad71c5d68efec327b40f49be4dbd8f4368049070844",
     "local/audit_mechanism.py": "eca24173113b69d40da925da2093525f13df4d339aa0b4044b03fdc850991169"
+  },
+  "formatting_only_after_validation": {
+    "file": "quiet.py",
+    "change": "remove trailing blank line only",
+    "AST_equal_to_executed_source": true,
+    "executed_source_sha256": "a4a9574e6b66bfb123f854919b32bbf256fb0d3fe72705d7cbd3c93d99afea68"
   }
 }

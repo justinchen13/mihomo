@@ -63,4 +63,3 @@ def fixed_quiet_before_go(out, processes, netlab):
             'actual_wait_seconds':wait_end-began,'before':before,'after':after,
             'task_CPU_comparable':comparable,'total_task_CPU_delta_seconds':delta/1e9 if delta is not None else None,
             'policy':'fixedonce; residualactivityreported; noadaptivewait/retry/quotaorgatechange; snapshotsnon-atomic'}
-
