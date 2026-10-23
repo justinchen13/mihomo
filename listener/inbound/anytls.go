@@ -10,7 +10,8 @@ import (
 )
 
 type AnyTLSOption struct {
-	StageEvidence bool `inbound:"stage-evidence,omitempty"`
+	TCPWriteBackpressure bool `inbound:"tcp-write-backpressure,omitempty"`
+	StageEvidence        bool `inbound:"stage-evidence,omitempty"`
 	BaseOption
 	Users          map[string]string `inbound:"users,omitempty"`
 	Certificate    string            `inbound:"certificate"`
@@ -41,16 +42,17 @@ func NewAnyTLS(options *AnyTLSOption) (*AnyTLS, error) {
 		Base:   base,
 		config: options,
 		vs: LC.AnyTLSServer{
-			Enable:         true,
-			StageEvidence:  options.StageEvidence,
-			Listen:         base.RawAddress(),
-			Users:          options.Users,
-			Certificate:    options.Certificate,
-			PrivateKey:     options.PrivateKey,
-			ClientAuthType: options.ClientAuthType,
-			ClientAuthCert: options.ClientAuthCert,
-			EchKey:         options.EchKey,
-			PaddingScheme:  options.PaddingScheme,
+			TCPWriteBackpressure: options.TCPWriteBackpressure,
+			Enable:               true,
+			StageEvidence:        options.StageEvidence,
+			Listen:               base.RawAddress(),
+			Users:                options.Users,
+			Certificate:          options.Certificate,
+			PrivateKey:           options.PrivateKey,
+			ClientAuthType:       options.ClientAuthType,
+			ClientAuthCert:       options.ClientAuthCert,
+			EchKey:               options.EchKey,
+			PaddingScheme:        options.PaddingScheme,
 		},
 	}, nil
 }

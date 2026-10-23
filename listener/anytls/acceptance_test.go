@@ -111,6 +111,10 @@ func acceptanceCertificate(t *testing.T) (string, string) {
 }
 
 func acceptanceFixture(t *testing.T, version uint16, paddingScheme string) (*Listener, *acceptanceTunnel, *acceptanceDialer, *client.Client) {
+	return acceptanceFixtureTCPWriteQueue(t, version, paddingScheme, false)
+}
+
+func acceptanceFixtureTCPWriteQueue(t *testing.T, version uint16, paddingScheme string, enabled bool) (*Listener, *acceptanceTunnel, *acceptanceDialer, *client.Client) {
 	t.Helper()
 	cert, key := acceptanceCertificate(t)
 	if e := ca.AddCertificate(cert); e != nil {
@@ -118,7 +122,7 @@ func acceptanceFixture(t *testing.T, version uint16, paddingScheme string) (*Lis
 	}
 	t.Cleanup(ca.ResetCertificate)
 	h := &acceptanceTunnel{slowEntered: make(chan struct{}, 1), slowRelease: make(chan struct{}), stop: make(chan struct{})}
-	l, e := New(LC.AnyTLSServer{Listen: "127.0.0.1:0", Users: map[string]string{"fixture": "local-fixture-password", "fixture-two": "local-fixture-password-two"}, Certificate: cert, PrivateKey: key, PaddingScheme: paddingScheme}, h)
+	l, e := New(LC.AnyTLSServer{Listen: "127.0.0.1:0", Users: map[string]string{"fixture": "local-fixture-password", "fixture-two": "local-fixture-password-two"}, Certificate: cert, PrivateKey: key, PaddingScheme: paddingScheme, TCPWriteBackpressure: enabled}, h)
 	if e != nil {
 		t.Fatal(e)
 	}

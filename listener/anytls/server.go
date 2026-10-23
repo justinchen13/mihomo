@@ -109,6 +109,7 @@ func New(config LC.AnyTLSServer, tunnel C.Tunnel, additions ...inbound.Addition)
 			return nil, err
 		}
 		if len(tlsConfig.Certificates) > 0 {
+			l = wrapOuterWriteQueue(l, config.TCPWriteBackpressure)
 			l = tlsC.NewListener(l, tlsConfig)
 		} else {
 			return nil, errors.New("disallow using AnyTLS without certificates config")
