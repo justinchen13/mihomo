@@ -134,6 +134,7 @@ type stageHub struct {
 	sequence        atomic.Uint64
 	failedExports   atomic.Uint64
 	latest          atomic.Pointer[stagePublication]
+	history         atomic.Pointer[stagePublicationHistory]
 	terminal        [evidenceSessions]stageSnapshot
 	terminalN       int
 	slow            [evidenceStageCount]stageSlowQueue
