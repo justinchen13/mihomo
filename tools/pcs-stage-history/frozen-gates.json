@@ -1,0 +1,18 @@
+{
+  "frozen_utc": "2026-10-23T11:58:02.950943+00:00",
+  "functional": [
+    "Deployed-baseline negative shows repeated same cached publication skips intermediate event; candidate exact protocol+source timestamps recovers all within3-publication retention.",
+    "Cursor epoch/reset/retention-overflow/disabled/awaiting/stale/duplicate/gap/failed-output cases remain explicit; failed output never advances durable cursor or hides replay.",
+    "Legacy JSON and default-off/public TCP/TLS route exclusion preserved; new routeUnix-only, validation bounded, no logs/secrets/raw endpoints introduced.",
+    "Max body64KiB, producer history3immutable bodies, no session/writer registry mutex in diagnostic HTTP path, max2requests/2rows perregular tick, shared absolute1s network budget, no burst polling.",
+    "Legacy capture-age25s unchanged; recovered historical capture-age<=45s only if current latest-age<=25s, explicit historical label; no current-gauge inference from history.",
+    "Required source exact normal/race including real60s deadlineoptin when claiming fullsecurity, Python consumer/realUnixHTTP+output+cursor tests no skips."
+  ],
+  "cost": [
+    "Additional immutable retained bodies<=2*(64KiB-1024) plus fixed metadata; no perproxy-operation state/lock changes.",
+    "Paired normalpublish/legacyread/fullcursor recovery CPU and allocation cost measured; server publication medianCPU regression<=10%, consumer ordinary legacy cycle medianCPU<=10% regression. Catch-up extra work reported separately and capped.",
+    "Fullproxy server normal/race/auth/TLS/multistream correctness and resource-qualified wholeproxy throughput/P95 regression gates required before rollout: throughput>=98%baseline and latency<=105%baseline under same capped paired workload.",
+    "Do not deploy from pure fixture/micro cost wins alone. Newrelease must sync source/image pins and be followed by bounded natural monitoring with realcoverage report."
+  ],
+  "scope_limit": "This fixes evidence delivery only, never counts as elimination of Caddy/HY path stalls or public speed proof."
+}

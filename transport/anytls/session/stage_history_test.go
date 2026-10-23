@@ -116,6 +116,16 @@ func TestStageHistoryConsumerFixtures(t *testing.T) {
 	publish(202)
 	publish(303)
 	fixtures := map[string]StageEvidenceSnapshot{"legacy1": first, "history2": h.readPublicationAfter(h.nonce, 1), "history3": h.readPublicationAfter(h.nonce, 2)}
+	costHub := testStageHub(t)
+	for i := 0; i < 32; i++ {
+		handle := costHub.attach(nil)
+		t.Cleanup(handle.close)
+		op := handle.beginRead(stageReadBody, cmdPSH, 32768)
+		op.started = time.Now().Add(-150 * time.Millisecond)
+		handle.finishRead(op, nil)
+	}
+	costHub.publish(costHub.collect(time.Now()))
+	fixtures["cost32"] = costHub.readPublication()
 	for name, out := range fixtures {
 		body, err := json.Marshal(out)
 		if err != nil || !json.Valid(body) || len(body) > StageEvidenceMaxResponseBytes {

@@ -35,7 +35,9 @@ func TestStageHistoryCursorRecoversIntermediatePublication(t *testing.T) {
 	next := readAfter(1)
 	if next.Sequence == nil || *next.Sequence != 2 {
 		actual := uint64(0)
-		if next.Sequence != nil { actual = *next.Sequence }
+		if next.Sequence != nil {
+			actual = *next.Sequence
+		}
 		t.Fatalf("intermediate publication lost: cursor1 returned %d; latest-only cannot recover2", actual)
 	}
 	var batch stageBatch
