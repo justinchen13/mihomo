@@ -142,14 +142,15 @@ def main():
   save()
   if RECORD['publisher_cost']['cases']['BenchmarkStageHistoryPublish32']['ratio']>1.10:raise RuntimeError('publisher CPU regression')
   must('consumer-CPU-cost',['python3',str(CANDIDATE/'tools/pcs-stage-history/consumer_cost.py'),str(PCSBASE/'mihomo-anytls/monitor/stage.py'),str(monitor/'stage.py'),str(OUT/'source-fixtures/cost32.body.json'),str(OUT/'consumer-cost.json')],timeout=180)
-  ldflags='-X github.com/metacubex/mihomo/constant.Version='+VERSION+' -X github.com/metacubex/mihomo/constant.BuildTime='+BUILD_TIME+' -s -w -buildid='
+  ldflags='-X github.com/metacubex/mihomo/constant.Version='+VERSION+' -X github.com/metacubex/mihomo/constant.BuildTime='+BUILD_TIME+' -w -s -buildid='
   for name,cwd,version in [('baseline',BASELINE,'v1.19.17-pcsproxy4'),('candidate',CANDIDATE,VERSION)]:
    flags=ldflags.replace(VERSION,version)
+   if name=='baseline':flags=flags.replace(BUILD_TIME,'2026-10-18T11:50:53Z')
    binary=OUT/('mihomo-'+name)
    must(name+'-tagged-build',['go','build','-mod=readonly','-p=2','-tags','with_gvisor','-trimpath','-buildvcs=false','-ldflags',flags,'-o',str(binary),'.'],cwd=cwd,timeout=1200,env={'CGO_ENABLED':'0'})
    text=must(name+'-version',[str(binary),'-v'],timeout=10).read_text()
    if version not in text or 'with_gvisor' not in text:raise RuntimeError('binary identity')
-   RECORD[name+'_binary']={'sha256':sha(binary),'bytes':binary.stat().st_size,'runtime_source':BASE if name=='baseline' else SOURCE,'tags':['with_gvisor'],'CGO_ENABLED':0};save()
+   RECORD[name+'_binary']={'production_reference_sha256':'09f63bde838eb9391b7dcf15e8568368b98510dd52662b050420f3c391cfe85c' if name=='baseline' else None,'matches_production_reference':sha(binary)=='09f63bde838eb9391b7dcf15e8568368b98510dd52662b050420f3c391cfe85c' if name=='baseline' else None,'sha256':sha(binary),'bytes':binary.stat().st_size,'runtime_source':BASE if name=='baseline' else SOURCE,'tags':['with_gvisor'],'CGO_ENABLED':0};save()
   RECORD['status']='PASS_FUNCTIONAL_API_COST_AND_BUILD_ONLY'
   RECORD['release_status']='HOLD_PENDING_FROZEN_WHOLE_PROXY_98PCT_GOODPUT_105PCT_P95_AND_RUNTIME_SAFETY'
  except Exception as exc:
