@@ -1,0 +1,117 @@
+{
+  "source_commit": "05bb15f53aeef6e499968441ecd6c59c2d6b1613",
+  "source_directory": "tools/pcs-stage-history-cost",
+  "sources": {
+    "adjudicate.py": {
+      "source_path": "tools/pcs-stage-history-cost/adjudicate.py",
+      "source_sha256": "2c2bfdf829febd1bf66b015332085ce6ec1398c9c2ebd9b6c79fed735cb89476",
+      "sha256": "35fbbc1e9c3e790dec7cae822d342469d6069a630ca864239af6de3f7e28fe5c",
+      "byte_identical": false
+    },
+    "build-client.sh": {
+      "source_path": "tools/pcs-stage-history-cost/build-client.sh",
+      "source_sha256": "8c5e3ec13d180e8be68072f164281a532d7f54b54f777a5921ec8df287fcf31b",
+      "sha256": "3ff2d0c8e86ef5d3ec15696ffaf9162a27b613a78ea2005583d20a90e5e2c849",
+      "byte_identical": false
+    },
+    "cleanup_contract.py": {
+      "source_path": "tools/pcs-stage-history-cost/cleanup_contract.py",
+      "source_sha256": "94ccd6cc77de39b3fa4bd6f01cd3c4a009111935a0ab24df7fe8d852a9be3d0d",
+      "sha256": "94ccd6cc77de39b3fa4bd6f01cd3c4a009111935a0ab24df7fe8d852a9be3d0d",
+      "byte_identical": true
+    },
+    "client-v3.go": {
+      "source_path": "tools/pcs-stage-history-cost/client-v2.go",
+      "source_sha256": "391580fd40779250cbc0e296d50ad0a00c3f00c67f243ddcc349f1d1b0fc9acb",
+      "sha256": "961a4c84676fe830e925b7c5eab226d416b6146023b5b6537bceae1f3603dca9",
+      "byte_identical": false
+    },
+    "collector-wrapper.py": {
+      "source_path": "tools/pcs-stage-history-cost/collector-wrapper.py",
+      "source_sha256": "e210fd20d543344872040b3f62779511c8e779f0a217a77416ed39a2f3b3e1f7",
+      "sha256": "e210fd20d543344872040b3f62779511c8e779f0a217a77416ed39a2f3b3e1f7",
+      "byte_identical": true
+    },
+    "history_contract.py": {
+      "source_path": "tools/pcs-stage-history-cost/history_contract.py",
+      "source_sha256": "c172277ec34fef17b0a206625c3ebc8131acdf072324d2ff85f53483133f41e1",
+      "sha256": "c172277ec34fef17b0a206625c3ebc8131acdf072324d2ff85f53483133f41e1",
+      "byte_identical": true
+    },
+    "input_contract.py": {
+      "source_path": "tools/pcs-stage-history-cost/input_contract.py",
+      "source_sha256": "b1b4bf168885aa9f11ecff96ba2cbae6c4063a6e1bd387bd04b263bb7d818b93",
+      "sha256": "082a9375bc69fc994be4651e45be5b4c5c5685c5675ec3b622abf4525576d25f",
+      "byte_identical": false
+    },
+    "inputs.example.json": {
+      "source_path": "tools/pcs-stage-history-cost/inputs.example.json",
+      "source_sha256": "1aed96243afea561dacc9173e5bb3dd99456b4ed9779fcb78d22629fb3768df1",
+      "sha256": "755e88a5838d71daf2d661de82eae9ac07d5c9da74457d0ef3b000dcb823036f",
+      "byte_identical": false
+    },
+    "launch.sh": {
+      "source_path": "tools/pcs-stage-history-cost/launch.sh",
+      "source_sha256": "01759d5864f66e6597722dc33427808c7048291b5939e65f7df10f0d99452e1d",
+      "sha256": "01759d5864f66e6597722dc33427808c7048291b5939e65f7df10f0d99452e1d",
+      "byte_identical": true
+    },
+    "numeric_core.py": {
+      "source_path": "tools/pcs-stage-history-cost/numeric_core.py",
+      "source_sha256": "69e9da6239de50b7bb9c8cd3307dc4c5cc3f3c95d804d6e929e8f8c5af052554",
+      "sha256": "69e9da6239de50b7bb9c8cd3307dc4c5cc3f3c95d804d6e929e8f8c5af052554",
+      "byte_identical": true
+    },
+    "prepare.py": {
+      "source_path": "tools/pcs-stage-history-cost/prepare.py",
+      "source_sha256": "8d4cd19c18d64b94269b5f0364f46cc67941046d1f054c29f726b6008c3796bb",
+      "sha256": "9f0a83def9bd115785e6671a4b25947165f52866e8b3955f54f12d9facaedfde",
+      "byte_identical": false
+    },
+    "run.py": {
+      "source_path": "tools/pcs-stage-history-cost/run.py",
+      "source_sha256": "30c1343f7eda3e8ad0e5a0b15b695120686ae84f721aba0bf67b245d9d774e55",
+      "sha256": "6435589712a4d376d0dc3261794ab8c3e850e5ee08e03f1f51c6edaf9d75f21d",
+      "byte_identical": false
+    },
+    "runtime_protocol.py": {
+      "source_path": "tools/pcs-stage-history-cost/runtime_protocol.py",
+      "source_sha256": "8140bc3940b1d539f2db6c73d7f320be7e3b37161a5da78b046c51c1cfcc6322",
+      "sha256": "8140bc3940b1d539f2db6c73d7f320be7e3b37161a5da78b046c51c1cfcc6322",
+      "byte_identical": true
+    },
+    "runtime_security.py": {
+      "source_path": "tools/pcs-stage-history-cost/runtime_security.py",
+      "source_sha256": "cf79928c7aadcdef6a126096a5899d3d7853f5a7d998e98fbcc6ce52629ba427",
+      "sha256": "cf79928c7aadcdef6a126096a5899d3d7853f5a7d998e98fbcc6ce52629ba427",
+      "byte_identical": true
+    },
+    "test_contract.py": {
+      "source_path": "tools/pcs-stage-history-cost/test_contract.py",
+      "source_sha256": "9583ac44a50ad5c1e1a0dde86b0f9108e8ea1e6537717d0662013b84cd79a29b",
+      "sha256": "ac769c8c91005d5e0f8f6e90e1f3318f574acf4fe1c09031dce8fa4a54f9c0e9",
+      "byte_identical": false
+    },
+    "test_cost66_contract.py": {
+      "source_path": null,
+      "source_sha256": null,
+      "sha256": "3c58e7691e658a2e3d5ddf51ab41da432e98ab8a05c83363bd1d7ce411d278ca",
+      "byte_identical": false
+    },
+    "test_history_cleanup.py": {
+      "source_path": "tools/pcs-stage-history-cost/test_history_cleanup.py",
+      "source_sha256": "2ae10b24d67a8342ed1d944acd7842a722b25f0c9f30fae219932f7f2d210330",
+      "sha256": "2ae10b24d67a8342ed1d944acd7842a722b25f0c9f30fae219932f7f2d210330",
+      "byte_identical": true
+    },
+    "workload_contract.py": {
+      "source_path": null,
+      "source_sha256": null,
+      "sha256": "eabc51a3fc8ecc7a596b7145125b75055067879d59630f5646d909cfaff2ee91",
+      "byte_identical": false
+    }
+  },
+  "numeric_core_byte_identical": true,
+  "original_directory_not_modified": true,
+  "execution": "NONE; R02/S1 results not R03 validation"
+}

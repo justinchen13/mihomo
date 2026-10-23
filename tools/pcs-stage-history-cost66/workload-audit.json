@@ -1,0 +1,156 @@
+{
+  "status": "STATIC_NOT_EXECUTED",
+  "changed_constants": [
+    {
+      "name": "active_seconds",
+      "before": 33,
+      "after": 66,
+      "reason": "fixed offered workload doubled"
+    },
+    {
+      "name": "bulk_bytes",
+      "before": 67108864,
+      "after": 134217728,
+      "reason": "same aggregate bulk offered rate"
+    },
+    {
+      "name": "upload_bytes",
+      "before": 8388608,
+      "after": 16777216,
+      "reason": "same aggregate upload offered rate"
+    },
+    {
+      "name": "small_count",
+      "before": 264,
+      "after": 528,
+      "reason": "same8requests/s, all raw retained"
+    },
+    {
+      "name": "client_deadline_seconds",
+      "before": 60,
+      "after": 93,
+      "reason": "preserve active+27s"
+    },
+    {
+      "name": "runner_deadline_seconds",
+      "before": 65,
+      "after": 98,
+      "reason": "preserve client+5s"
+    },
+    {
+      "name": "origin_max_duration_seconds",
+      "before": 40,
+      "after": 73,
+      "reason": "preserve active+7s request bound"
+    },
+    {
+      "name": "origin_max_phase_seconds",
+      "before": 33,
+      "after": 66,
+      "reason": "valid enlarged phase bound"
+    },
+    {
+      "name": "p95_nearest_rank",
+      "before": 251,
+      "after": 502,
+      "reason": "formula unchanged; ceil(n*.95)"
+    },
+    {
+      "name": "runner_profiles_per_invocation",
+      "before": [
+        1,
+        32,
+        66
+      ],
+      "after": "selected_profile only",
+      "reason": "4ABBA per manifest; external ordering"
+    },
+    {
+      "name": "manifest_schema",
+      "before": "history-whole-proxy-cost-v1",
+      "after": "history-whole-proxy-cost66-v1",
+      "reason": "no pooling across rounds"
+    }
+  ],
+  "unchanged_constants": {
+    "small_bytes": 4096,
+    "small_concurrency": 8,
+    "streams_per_outer": 3,
+    "stream_locks": "one per outer",
+    "io_and_digest_chunk_bytes": 32768,
+    "request_header_bytes": 21,
+    "request_body_length": "uint64;134217728 fits",
+    "duration_wire": "uint32 milliseconds;66000 fits",
+    "phase_wire": "uint32 microseconds;66000000 fits",
+    "per_outer_bulk_upload_split": "quotient/remainder; exact total preserved",
+    "hash": "SHA256 deterministic bytes; new length, same seed rule",
+    "upload_digest_response_bytes_per_outer": 32,
+    "body_buffer_bound": "streamed32768B, not payload-sized allocation",
+    "origin_connection_seconds": 180,
+    "origin_and_anchor_seconds": 240,
+    "client_ready_seconds": 40,
+    "client_GO_wait_seconds": 50,
+    "warmup_seconds": 13,
+    "TLS_dial_seconds": 5,
+    "TLS_auth_deadline_seconds": 10,
+    "first_capture_seconds": [
+      0.95,
+      1.1
+    ],
+    "settle_seconds": 1,
+    "finish_wait_seconds": 8,
+    "collector_shutdown_grace_seconds": 12,
+    "collector_interval_seconds": 10,
+    "TLS_probe_interval_seconds": 300,
+    "regular_maxgap_seconds": 11,
+    "fullcycle_max_seconds": 10,
+    "min_ready_publications": 3,
+    "history_capture_limit_ms": 45000,
+    "latest_limit_ms": 25000,
+    "wrapper_bytes": 1048576,
+    "wrapper_record_bytes": 4096,
+    "requests_append_ACKs_max_each_per_tick": 2,
+    "stage_HTTP_body_bytes": 65536,
+    "tracked_sessions": 32,
+    "regular_TCP_cap": 512,
+    "supplied_consumer_retention": "identical explicit old/new consumer source pins; no mutation",
+    "stage_log_retention": "unchanged consumer4MiB+one backup; errors/crop HOLD",
+    "phase_deadline_seconds": 900,
+    "termination_cleanup_seconds": 30,
+    "parent_proxy_CPUs": 0.4,
+    "parent_proxy_memory_bytes": 536870912,
+    "collector_CPUs": 0.1,
+    "collector_memory_bytes": 100663296,
+    "swap": "no extra swap; collector/parent swap.max0",
+    "baseline_collector_min_CPU_seconds": 0.1,
+    "proxy_min_CPU_seconds": 0.2,
+    "median_goodput_min_ratio": 0.98,
+    "median_P95_max_ratio": 1.05,
+    "CPU_ratio_max": 1.2,
+    "RSS_extra_bytes": 16777216,
+    "byte_accounting": "verified downstream bulk+small+32*n; upload separate; priming excluded",
+    "ABBA_pairs": [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "P95": "scheduled-to-verified; scheduler/streamwait included; no successful-only PASS",
+    "raw_retention": "all528 Small rows plus all raw resource/timing/publication records; no reduction"
+  },
+  "offered_bulk_decimal_MB_per_second": 2.0336019393939395,
+  "offered_upload_decimal_MB_per_second": 0.25420024242424244,
+  "offered_small_requests_per_second": 8.0,
+  "numeric_core_has_workload_hardcoding": false,
+  "numeric_core_changed": false,
+  "limitations": [
+    "66 profile TCP endpoint population528 can exceed512cap; no full socket coverage claim",
+    "33 in retained synthetic history test is an independent test timestamp interval, not runtime duration",
+    "new raw result list bound528 and P95 independently rechecked; no original numeric threshold relaxed",
+    "180/240s helper lifetimes unchanged; unsupported delays fail under fixed bounds"
+  ]
+}
