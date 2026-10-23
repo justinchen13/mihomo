@@ -1,0 +1,21 @@
+{
+  "frozen_utc": "2026-10-23T11:40:37.070727+00:00",
+  "candidate": "constant-operation atomic capacity reservation before string formatting; no post-dequeue format move",
+  "base_runtime": "00e79a0a478d6cc340ca039bd4f6a021dc3f03de",
+  "base_formal": "bfafaef228ec71d792c65eaacba5aa0ccd943ada",
+  "functional": [
+    "Baseline deterministic allocation negative: full slow queue event drops still allocate timestamp strings. Candidate full queue must allocate zero timestamp strings.",
+    "Retained RFC3339Nano start/completion values and counters/error/frame/order unchanged; no collection-time timestamp substitution.",
+    "Normal/race stage evidence/export/admission/class/deadline/close tests pass, no skips or goleak suppression.",
+    "No authentication/cryptography/padding/protocol/deadline/network settings change; disabled path byte-identical."
+  ],
+  "cost": [
+    "Fullqueue per-event median CPU decrease>=20% over paired repeated measurements; no baseline warmup substitution.",
+    "Whole retained-event record+collect cycle CPU regression<=5%; fixed extra queue storage measured.",
+    "Before production rollout: full tagged build, full server correctness/security regressions, resource-qualified paired whole-proxy workload required. A microbenchmark win alone cannot justify deployment or public speed claim."
+  ],
+  "scope": "Efficiency of diagnostics only; does not claim elimination of TCP/QUIC path stalls. Overall goal stays active; other root-cause work continues.",
+  "variant": "v2 reserve bounded class capacity before formatting; keep retained event struct128bytes and wire schema unchanged",
+  "comparison_order": "A B B A,3 repetitions/group; fresh baseline measurements; same benchmark/test projection",
+  "full_test_environment_requirement": "Enable existing opt-in real60s dead-peer test for both normal/race; do not treat its skip as pass."
+}

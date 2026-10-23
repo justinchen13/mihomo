@@ -3,7 +3,6 @@ package session
 import (
 	"sort"
 	"sync/atomic"
-	"time"
 )
 
 const evidenceSlowPolicy = "fixed_stage_budgets_v1"
@@ -15,6 +14,7 @@ var evidenceSlowClassCapacity = [evidenceStageCount]int{8, 4, 8, 2, 6, 4}
 
 type stageSlowQueue struct {
 	events    chan stageSlowEvent
+	reserved  atomic.Int32
 	attempted atomic.Uint64
 	admitted  atomic.Uint64
 	dropped   atomic.Uint64
@@ -29,16 +29,40 @@ type stageSlowQueueCounters struct {
 	Dequeued  uint64 `json:"dequeued"`
 }
 
-func (h *stageHub) enqueueSlow(stage int, event stageSlowEvent) {
+// Reservation is a fixed number of atomic operations, with no retry or wait.
+// Count reserved-but-not-yet-sent events too, so a successful reservation can
+// format outside the queue without blocking another proxy operation. A failed
+// reservation may briefly hold capacity until its decrement, just as a producer
+// and collector can observe different instants of the bounded queue.
+func (h *stageHub) reserveSlow(stage int) (*stageSlowQueue, bool) {
 	queue := &h.slow[stage]
 	queue.attempted.Add(1)
+	if queue.reserved.Add(1) <= int32(cap(queue.events)) {
+		return queue, true
+	}
+	queue.reserved.Add(-1)
+	queue.dropped.Add(1)
+	h.lostSlow.Add(1)
+	return nil, false
+}
+
+func (h *stageHub) commitSlow(queue *stageSlowQueue, event stageSlowEvent) {
 	select {
 	case queue.events <- event:
 		queue.admitted.Add(1)
 	default:
+		// Preserve nonblocking operation even if future code violates the
+		// reservation invariant. Release capacity and expose the loss.
+		queue.reserved.Add(-1)
 		queue.dropped.Add(1)
 		// Preserve the existing total: queue-full losses across all classes.
 		h.lostSlow.Add(1)
+	}
+}
+
+func (h *stageHub) enqueueSlow(stage int, event stageSlowEvent) {
+	if queue, ok := h.reserveSlow(stage); ok {
+		h.commitSlow(queue, event)
 	}
 }
 
@@ -48,9 +72,8 @@ func (h *stageHub) collectSlow(batch *stageBatch) {
 		for i := 0; i < capacity; i++ {
 			select {
 			case event := <-queue.events:
+				queue.reserved.Add(-1)
 				queue.dequeued.Add(1)
-				event.StartedAt = event.started.UTC().Format(time.RFC3339Nano)
-				event.CompletedAt = event.completed.UTC().Format(time.RFC3339Nano)
 				batch.SlowEvents = append(batch.SlowEvents, event)
 			default:
 				i = capacity

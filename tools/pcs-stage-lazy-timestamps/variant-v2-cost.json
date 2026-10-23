@@ -1,0 +1,184 @@
+{
+  "variant": "v2 reserve capacity before formatting retained events, no event-size growth",
+  "frozen_gates": "FROZEN_GATES_V2.json",
+  "order": "A B B A;3x200000iterations per group",
+  "cpu_clock": "RUSAGE_SELF user+system process CPU",
+  "comparisons": {
+    "BenchmarkStageSlowFullQueueRecord": {
+      "baseline_cpu_median_ns": 421.95,
+      "candidate_cpu_median_ns": 59.83,
+      "cpu_change_percent": -85.82059485721057,
+      "samples_per_variant": 6
+    },
+    "BenchmarkStageSlowRecordCollectCycle": {
+      "baseline_cpu_median_ns": 1000.05,
+      "candidate_cpu_median_ns": 1067.5,
+      "cpu_change_percent": 6.744662766861653,
+      "samples_per_variant": 6
+    }
+  },
+  "raw_measurements": {
+    "v2-a1": [
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 424.4,
+        "event_bytes": 128.0,
+        "allocs_per_op": 2.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 429.6,
+        "event_bytes": 128.0,
+        "allocs_per_op": 2.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 419.5,
+        "event_bytes": 128.0,
+        "allocs_per_op": 2.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 1101.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 1002.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 998.1,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      }
+    ],
+    "v2-b1": [
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 60.99,
+        "event_bytes": 128.0,
+        "allocs_per_op": 0.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 52.26,
+        "event_bytes": 128.0,
+        "allocs_per_op": 0.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 54.58,
+        "event_bytes": 128.0,
+        "allocs_per_op": 0.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 1204.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 989.9,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 984.8,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      }
+    ],
+    "v2-b2": [
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 63.23,
+        "event_bytes": 128.0,
+        "allocs_per_op": 0.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 61.83,
+        "event_bytes": 128.0,
+        "allocs_per_op": 0.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 58.67,
+        "event_bytes": 128.0,
+        "allocs_per_op": 0.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 1111.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 1206.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 1024.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      }
+    ],
+    "v2-a2": [
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 365.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 2.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 403.4,
+        "event_bytes": 128.0,
+        "allocs_per_op": 2.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowFullQueueRecord",
+        "cpu_ns_per_op": 490.3,
+        "event_bytes": 128.0,
+        "allocs_per_op": 2.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 1085.0,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 988.4,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      },
+      {
+        "benchmark": "BenchmarkStageSlowRecordCollectCycle",
+        "cpu_ns_per_op": 974.9,
+        "event_bytes": 128.0,
+        "allocs_per_op": 4.0
+      }
+    ]
+  },
+  "gate": "HOLD_RETAINED_CYCLE_CPU_REGRESSION_EXCEEDS_5PCT",
+  "deployment_allowed": false,
+  "production_changed": false,
+  "full_proxy_cost": "NOT_RUN_EARLY_COST_GATE_FAILED",
+  "full_normal_race_zero_skip": "NOT_RUN_V2_EARLY_COST_GATE_FAILED; targeted Stage runs separately retained.",
+  "limits": [
+    "CPU measurements are isolated micro costs, not proxy speed or failure rate.",
+    "Retained cycle samples vary; observed median fails frozen <=5% gate, no selective repetition to obtain PASS.",
+    "Counters/budgets/export schema unchanged; reservation includes ready and temporarily reserved events; no producer waits/retries."
+  ]
+}

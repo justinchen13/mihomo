@@ -1,0 +1,62 @@
+{
+  "old-negative-v2": {
+    "exit_code": 1,
+    "owned_container_absent": true,
+    "top_passes": 0,
+    "sub_passes": 0,
+    "skipped_tests": [],
+    "failed_tests": [
+      "TestStageSlowFullQueueDoesNotFormatTimestamp"
+    ],
+    "stdout_sha256": "b536b7234811df0494bc0d98c080509c3051afc42aa32e6e65f2565090885816"
+  },
+  "candidate-stage-v2": {
+    "exit_code": 0,
+    "owned_container_absent": true,
+    "top_passes": 26,
+    "sub_passes": 4,
+    "skipped_tests": [],
+    "failed_tests": [],
+    "stdout_sha256": "1bec0c7a8533cd6619a559a3fa66690e93ee56219aed9571d565f85ac42b3c21"
+  },
+  "candidate-all-normal": {
+    "exit_code": 0,
+    "owned_container_absent": true,
+    "top_passes": 38,
+    "sub_passes": 11,
+    "skipped_tests": [
+      "TestRealTLSDeadPeerWriteBudget"
+    ],
+    "failed_tests": [],
+    "stdout_sha256": "9f103dba159eecaf835caa009a9b2e93d5f1f56afaeca8a66fc5f1321013bd39"
+  },
+  "candidate-all-race": {
+    "exit_code": 0,
+    "owned_container_absent": true,
+    "top_passes": 38,
+    "sub_passes": 11,
+    "skipped_tests": [
+      "TestRealTLSDeadPeerWriteBudget"
+    ],
+    "failed_tests": [],
+    "stdout_sha256": "985b6ac6f9af84fbe76ac0831ad3fcd0faec4480d3523e328630c01305152173"
+  },
+  "v2-stage-normal": {
+    "exit_code": 0,
+    "owned_container_absent": true,
+    "top_passes": 26,
+    "sub_passes": 4,
+    "skipped_tests": [],
+    "failed_tests": [],
+    "stdout_sha256": "7e5d5313fe37b83880160913ca3d83a8d21bb5265272a3a5569560bcbb0150e3"
+  },
+  "v2-stage-race": {
+    "exit_code": 0,
+    "owned_container_absent": true,
+    "top_passes": 26,
+    "sub_passes": 4,
+    "skipped_tests": [],
+    "failed_tests": [],
+    "stdout_sha256": "e659578e1b27555ea6d946f6b6280a26fc0103452e62f1c17fe13a69d998ee78"
+  }
+}
